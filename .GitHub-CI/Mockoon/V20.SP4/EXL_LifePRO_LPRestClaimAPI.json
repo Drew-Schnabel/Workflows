@@ -9,6 +9,28 @@
     "folders": [],
     "routes": [
       {
+        "uuid": "00475f0c-3232-4a9d-ad5a-371bac719f48",
+        "type": "http",
+        "documentation": "Claim.",
+        "method": "POST",
+        "endpoint": "/LPRestClaim",
+        "responses": [
+          {
+            "statusCode": 200,
+            "body": "{\"message\": \"Claim processed successfully\"}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
         "uuid": "cb360049-326d-4ce4-b168-076b725b1d2b",
         "type": "http",
         "documentation": "GetClaimList.",
