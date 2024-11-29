@@ -58,13 +58,12 @@ jobs:
       run: |
         npm install -g @mockoon/cli
     # Step 6: Start Mockoon Server Instances
-    - name: Start Mockoon Server
+    - name: Start Mockoon Servers
       run: |
-        mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestClaimAPI.json --port 3000 &
-        mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestPartyAPI.json --port 3001 &
-        mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestPolicyAPI.json --port 3002 &
-        mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestProductAPI.json --port 3003 &
-        wait
+        nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestClaimAPI.json --port 3000 > /dev/null 2>&1 &
+        nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestPartyAPI.json --port 3001 > /dev/null 2>&1 &
+        nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestPolicyAPI.json --port 3002 > /dev/null 2>&1 &
+        nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestProductAPI.json --port 3003 > /dev/null 2>&1 &
 
     # Step 7: Verify Mockoon Server is Running
     - name: Verify Mockoon Server
