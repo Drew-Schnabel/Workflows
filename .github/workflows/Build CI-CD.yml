@@ -60,11 +60,28 @@ jobs:
     # Step 6: Start Mockoon Server Instances
     - name: Start Mockoon Servers
       run: |
-        nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestClaimAPI.json --port 3000 > /dev/null 2>&1 &
-        nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestPartyAPI.json --port 3001 > /dev/null 2>&1 &
-        nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestPolicyAPI.json --port 3002 > /dev/null 2>&1 &
-        nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestProductAPI.json --port 3003 > /dev/null 2>&1 &
+        nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestClaimAPI.json --port 3000 > ./mockoon-3000.log 2>&1 &
+        nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestPartyAPI.json --port 3001 > ./mockoon-3001.log 2>&1 &
+        nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestPolicyAPI.json --port 3002 > ./mockoon-3002.log 2>&1 &
+        nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestProductAPI.json --port 3003 > ./mockoon-3003.log 2>&1 &
 
+    - name: Wait for Mockoon Servers to Start
+      run: |
+        for port in 3000 3001 3002 3003; do
+          for i in {1..10}; do
+            if curl --silent http://localhost:$port; then
+              echo "Mockoon server on port $port is ready"
+              break
+            fi
+            echo "Waiting for Mockoon server on port $port..."
+            sleep 3
+          done
+    done
+
+    - name: Check Mockoon Logs
+      run: |
+        tail ./mockoon-*.log
+        
     # Step 7: Verify Mockoon Server is Running
     - name: Verify Mockoon Server
       run: |
