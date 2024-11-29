@@ -1,0 +1,3723 @@
+{
+    "openapi": "3.0.1",
+    "port": 3008,
+    "info": {
+      "title": "Insurance Services API",
+      "description": "A web-based application programming interface (API) for insurance services. (version: 3.1.0-rc.3+build.548.3107afddd5a4bb2bfdd299b27aa0076d2cdd40c5)",
+      "version": "WEB-SQA w/PPD CONV1"
+    },
+    "servers": [
+      {
+        "url": "/InsuranceServices"
+      }
+    ],
+    "paths": {
+      "/api/account/token": {
+        "post": {
+          "tags": [
+            "Account"
+          ],
+          "operationId": "AccountPostLogin",
+          "parameters": [
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json-patch+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Login"
+                }
+              },
+              "application/vnd.restful+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Login"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Login"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Login"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "The token was created.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TokenResult"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TokenResult"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/TokenResult"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "The request was invalid.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    "title": "Bad Request",
+                    "status": 400,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                    "errors": {
+                      "exampleProperty1": [
+                        "The property field is required"
+                      ]
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/account/register": {
+        "post": {
+          "tags": [
+            "Account"
+          ],
+          "operationId": "AccountPostRegistration",
+          "parameters": [
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json-patch+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registration"
+                }
+              },
+              "application/vnd.restful+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registration"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registration"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registration"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "The account was created.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": { }
+                },
+                "application/problem+json": {
+                  "schema": { }
+                },
+                "application/json": {
+                  "schema": { }
+                }
+              }
+            },
+            "400": {
+              "description": "The request for an account was invalid.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/RegistrationResult"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/RegistrationResult"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    "title": "Bad Request",
+                    "status": 400,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                    "errors": {
+                      "exampleProperty1": [
+                        "The property field is required"
+                      ]
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/RegistrationResult"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "The credentials used were unauthorized",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/account/{email}/claims": {
+        "put": {
+          "tags": [
+            "Account"
+          ],
+          "operationId": "AccountPutClaims",
+          "parameters": [
+            {
+              "name": "email",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json-patch+json": {
+                "schema": {
+                  "uniqueItems": true,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/vnd.restful+json": {
+                "schema": {
+                  "uniqueItems": true,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "uniqueItems": true,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "uniqueItems": true,
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "204": {
+              "description": "The claims were updated."
+            },
+            "400": {
+              "description": "The claims were invalid.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "uniqueItems": true,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "uniqueItems": true,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    "title": "Bad Request",
+                    "status": 400,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                    "errors": {
+                      "exampleProperty1": [
+                        "The property field is required"
+                      ]
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "uniqueItems": true,
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "The credentials used were unauthorized",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/document": {
+        "options": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentOptionsDocuments",
+          "parameters": [
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The allowed HTTP methods."
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentGetDocumentPage",
+          "parameters": [
+            {
+              "name": "insuranceFileNumber",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "documentId",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "documentSystemOfRecord",
+              "in": "query",
+              "schema": {
+                "$ref": "#/components/schemas/SystemOfRecord"
+              }
+            },
+            {
+              "name": "recId",
+              "in": "query",
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            },
+            {
+              "name": "printStatus",
+              "in": "query",
+              "schema": {
+                "$ref": "#/components/schemas/PrintStatus"
+              }
+            },
+            {
+              "name": "first",
+              "in": "query",
+              "schema": {
+                "maximum": 20,
+                "minimum": 1,
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "last",
+              "in": "query",
+              "schema": {
+                "maximum": 20,
+                "minimum": 1,
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "after",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "before",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "A collection of documents for the specified page.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocumentConnection"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocumentConnection"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocumentConnection"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "The page request parameters are invalid.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    "title": "Bad Request",
+                    "status": 400,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                    "errors": {
+                      "exampleProperty1": [
+                        "The property field is required"
+                      ]
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "A page with the specified page number was not found.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    "title": "Not Found",
+                    "status": 404,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "406": {
+              "description": "The MIME type in the Accept HTTP header is not acceptable.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.6",
+                    "title": "Not Acceptable",
+                    "status": 406,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "head": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentHeadDocumentPage",
+          "parameters": [
+            {
+              "name": "insuranceFileNumber",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "documentId",
+              "in": "query",
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "documentSystemOfRecord",
+              "in": "query",
+              "schema": {
+                "$ref": "#/components/schemas/SystemOfRecord"
+              }
+            },
+            {
+              "name": "recId",
+              "in": "query",
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            },
+            {
+              "name": "printStatus",
+              "in": "query",
+              "schema": {
+                "$ref": "#/components/schemas/PrintStatus"
+              }
+            },
+            {
+              "name": "first",
+              "in": "query",
+              "schema": {
+                "maximum": 20,
+                "minimum": 1,
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "last",
+              "in": "query",
+              "schema": {
+                "maximum": 20,
+                "minimum": 1,
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "after",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "before",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "A collection of documents for the specified page.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocumentConnection"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocumentConnection"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocumentConnection"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "The page request parameters are invalid.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    "title": "Bad Request",
+                    "status": 400,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                    "errors": {
+                      "exampleProperty1": [
+                        "The property field is required"
+                      ]
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "A page with the specified page number was not found.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    "title": "Not Found",
+                    "status": 404,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "406": {
+              "description": "The MIME type in the Accept HTTP header is not acceptable.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.6",
+                    "title": "Not Acceptable",
+                    "status": 406,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentPostDocument",
+          "parameters": [
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json-patch+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentInsert"
+                }
+              },
+              "application/vnd.restful+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentInsert"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentInsert"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentInsert"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "The document was created.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "The document is invalid.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    "title": "Bad Request",
+                    "status": 400,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                    "errors": {
+                      "exampleProperty1": [
+                        "The property field is required"
+                      ]
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "406": {
+              "description": "The MIME type in the Accept HTTP header is not acceptable.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.6",
+                    "title": "Not Acceptable",
+                    "status": 406,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "415": {
+              "description": "The MIME type in the Content-Type HTTP header is unsupported.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.13",
+                    "title": "Unsupported Media Type",
+                    "status": 415,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentPutDocumentWithoutId",
+          "parameters": [
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json-patch+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentUpdate"
+                }
+              },
+              "application/vnd.restful+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentUpdate"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentUpdate"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentUpdate"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "The document was updated.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "The document is invalid.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    "title": "Bad Request",
+                    "status": 400,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                    "errors": {
+                      "exampleProperty1": [
+                        "The property field is required"
+                      ]
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "A document with the specified unique identifier could not be found.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    "title": "Not Found",
+                    "status": 404,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "406": {
+              "description": "The MIME type in the Accept HTTP header is not acceptable.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.6",
+                    "title": "Not Acceptable",
+                    "status": 406,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "415": {
+              "description": "The MIME type in the Content-Type HTTP header is unsupported.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.13",
+                    "title": "Unsupported Media Type",
+                    "status": 415,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/api/document/{documentId}": {
+        "options": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentOptionsDocument",
+          "parameters": [
+            {
+              "name": "documentId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The allowed HTTP methods."
+            }
+          }
+        },
+        "patch": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentPatchDocument",
+          "parameters": [
+            {
+              "name": "documentId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json-patch+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentUpdateJsonPatchDocument"
+                }
+              },
+              "application/vnd.restful+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentUpdateJsonPatchDocument"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentUpdateJsonPatchDocument"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentUpdateJsonPatchDocument"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "The patched document with the specified unique identifier.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "The patch document is invalid.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    "title": "Bad Request",
+                    "status": 400,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                    "errors": {
+                      "exampleProperty1": [
+                        "The property field is required"
+                      ]
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "A document with the specified unique identifier could not be found.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    "title": "Not Found",
+                    "status": 404,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "406": {
+              "description": "The MIME type in the Accept HTTP header is not acceptable.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.6",
+                    "title": "Not Acceptable",
+                    "status": 406,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "415": {
+              "description": "The MIME type in the Content-Type HTTP header is unsupported.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.13",
+                    "title": "Unsupported Media Type",
+                    "status": 415,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentPutDocument",
+          "parameters": [
+            {
+              "name": "documentId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json-patch+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentUpdate"
+                }
+              },
+              "application/vnd.restful+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentUpdate"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentUpdate"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentUpdate"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "The document was updated.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "The document is invalid.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    "title": "Bad Request",
+                    "status": 400,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                    "errors": {
+                      "exampleProperty1": [
+                        "The property field is required"
+                      ]
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "A document with the specified unique identifier could not be found.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    "title": "Not Found",
+                    "status": 404,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "406": {
+              "description": "The MIME type in the Accept HTTP header is not acceptable.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.6",
+                    "title": "Not Acceptable",
+                    "status": 406,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "415": {
+              "description": "The MIME type in the Content-Type HTTP header is unsupported.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.13",
+                    "title": "Unsupported Media Type",
+                    "status": 415,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/api/document/{documentId}/{systemOfRecord}": {
+        "delete": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentDeleteDocument",
+          "parameters": [
+            {
+              "name": "documentId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "systemOfRecord",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/SystemOfRecord"
+              }
+            },
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "The document with the specified unique identifier was deleted."
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "A document with the specified unique identifier was not found.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    "title": "Not Found",
+                    "status": 404,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "get": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentGetDocument",
+          "parameters": [
+            {
+              "name": "documentId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "systemOfRecord",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/SystemOfRecord"
+              }
+            },
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The document with the specified unique identifier.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                }
+              }
+            },
+            "304": {
+              "description": "The document has not changed since the date given in the If-Modified-Since HTTP header."
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "A document with the specified unique identifier could not be found.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    "title": "Not Found",
+                    "status": 404,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "406": {
+              "description": "The MIME type in the Accept HTTP header is not acceptable.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.6",
+                    "title": "Not Acceptable",
+                    "status": 406,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "head": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentHeadDocument",
+          "parameters": [
+            {
+              "name": "documentId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "systemOfRecord",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/SystemOfRecord"
+              }
+            },
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The document with the specified unique identifier.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                }
+              }
+            },
+            "304": {
+              "description": "The document has not changed since the date given in the If-Modified-Since HTTP header."
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "A document with the specified unique identifier could not be found.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    "title": "Not Found",
+                    "status": 404,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "406": {
+              "description": "The MIME type in the Accept HTTP header is not acceptable.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.6",
+                    "title": "Not Acceptable",
+                    "status": 406,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/api/document/{documentId}/{systemOfRecord}/pdf": {
+        "get": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentGetDocumentAsPdf",
+          "parameters": [
+            {
+              "name": "documentId",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "systemOfRecord",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/SystemOfRecord"
+              }
+            },
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The document with the specified unique identifier.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/InsuranceDocument"
+                  }
+                }
+              }
+            },
+            "304": {
+              "description": "The document has not changed since the date given in the If-Modified-Since HTTP header."
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "A document with the specified unique identifier could not be found.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    "title": "Not Found",
+                    "status": 404,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "406": {
+              "description": "The MIME type in the Accept HTTP header is not acceptable.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.6",
+                    "title": "Not Acceptable",
+                    "status": 406,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/api/document/metadata": {
+        "post": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentGetDocumentMetaData",
+          "parameters": [
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json-patch+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentQuery"
+                }
+              },
+              "application/vnd.restful+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentQuery"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentQuery"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentQuery"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "A collection of documents without document images.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/InsuranceDocument"
+                    }
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/InsuranceDocument"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/InsuranceDocument"
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "The document query is invalid.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    "title": "Bad Request",
+                    "status": 400,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                    "errors": {
+                      "exampleProperty1": [
+                        "The property field is required"
+                      ]
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "head": {
+          "tags": [
+            "Document"
+          ],
+          "operationId": "DocumentHeadDocumentMetaData",
+          "parameters": [
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json-patch+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentQuery"
+                }
+              },
+              "application/vnd.restful+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentQuery"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentQuery"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceDocumentQuery"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "A collection of documents without document images.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/InsuranceDocument"
+                    }
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/InsuranceDocument"
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/InsuranceDocument"
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "The document query is invalid.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                    "title": "Bad Request",
+                    "status": 400,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00",
+                    "errors": {
+                      "exampleProperty1": [
+                        "The property field is required"
+                      ]
+                    }
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/api/identifier/{identifierType}/{identifier}": {
+        "get": {
+          "tags": [
+            "Identifier"
+          ],
+          "operationId": "IdentifierGetIdentifier",
+          "parameters": [
+            {
+              "name": "identifierType",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/IdentifierType"
+              }
+            },
+            {
+              "name": "identifier",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The identifier cross referenced by the specified identifier.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Identifier"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Identifier"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Identifier"
+                  }
+                }
+              }
+            },
+            "304": {
+              "description": "The identifier cross reference has not changed since the date given in the If-Modified-Since HTTP header."
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "A identifier cross referenced by the specified identifier could not be found.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    "title": "Not Found",
+                    "status": 404,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "406": {
+              "description": "The MIME type in the Accept HTTP header is not acceptable.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.6",
+                    "title": "Not Acceptable",
+                    "status": 406,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        },
+        "head": {
+          "tags": [
+            "Identifier"
+          ],
+          "operationId": "IdentifierHeadIdentifier",
+          "parameters": [
+            {
+              "name": "identifierType",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "$ref": "#/components/schemas/IdentifierType"
+              }
+            },
+            {
+              "name": "identifier",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "The identifier cross referenced by the specified identifier.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Identifier"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Identifier"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Identifier"
+                  }
+                }
+              }
+            },
+            "304": {
+              "description": "The identifier cross reference has not changed since the date given in the If-Modified-Since HTTP header."
+            },
+            "401": {
+              "description": "The account is not authorized.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7235#section-3.1",
+                    "title": "Unauthorized",
+                    "status": 401,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "A identifier cross referenced by the specified identifier could not be found.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.4",
+                    "title": "Not Found",
+                    "status": 404,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "406": {
+              "description": "The MIME type in the Accept HTTP header is not acceptable.",
+              "content": {
+                "application/vnd.restful+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/problem+json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  },
+                  "example": {
+                    "type": "https://tools.ietf.org/html/rfc7231#section-6.5.6",
+                    "title": "Not Acceptable",
+                    "status": 406,
+                    "traceId": "00-982607166a542147b435be3a847ddd71-fc75498eb9f09d48-00"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      },
+      "/api/sdvi/patchbydocumentid/{documentId}": {
+        "patch": {
+          "tags": [
+            "Sdvi"
+          ],
+          "summary": "Patches the application with the specified imaged document identifier.",
+          "operationId": "SdviPatchByDocumentId",
+          "parameters": [
+            {
+              "name": "documentId",
+              "in": "path",
+              "description": "The imaged document identifier.",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            {
+              "name": "api-version",
+              "in": "query",
+              "description": "The requested API version",
+              "schema": {
+                "type": "string",
+                "default": "1.0"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "The LIPAS Policy.",
+            "content": {
+              "application/json-patch+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdviApplicationPatchJsonPatchDocument"
+                }
+              },
+              "application/vnd.restful+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdviApplicationPatchJsonPatchDocument"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdviApplicationPatchJsonPatchDocument"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SdviApplicationPatchJsonPatchDocument"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "204": {
+              "description": "No Content"
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "404": {
+              "description": "Not Found"
+            },
+            "500": {
+              "description": "Internal Server Error"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Division": {
+          "enum": [
+            "Undefined",
+            "InsuranceService",
+            "ProgramManagement",
+            "PolicyServices",
+            "InternalControls",
+            "DeathClaims",
+            "LiveClaims"
+          ],
+          "type": "string"
+        },
+        "DocumentTypeLegacy": {
+          "type": "object",
+          "properties": {
+            "cabinet": {
+              "type": "string",
+              "nullable": true
+            },
+            "category": {
+              "type": "string",
+              "nullable": true
+            },
+            "doctype": {
+              "type": "string",
+              "nullable": true
+            },
+            "documentTypeLegacyId": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "additionalProperties": false
+        },
+        "Format": {
+          "enum": [
+            "Undefined",
+            "Pdf",
+            "Doc",
+            "Docx",
+            "G3n",
+            "Tiff",
+            "Tif",
+            "Png",
+            "Jpg",
+            "Gif",
+            "Jpeg",
+            "Bmp"
+          ],
+          "type": "string"
+        },
+        "IContractResolver": {
+          "type": "object",
+          "additionalProperties": false
+        },
+        "Identifier": {
+          "type": "object",
+          "properties": {
+            "lastUpdated": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "socialSecurityNumber": {
+              "type": "string",
+              "nullable": true
+            },
+            "fileNumber": {
+              "type": "string",
+              "nullable": true
+            },
+            "lifeProNumber": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "policyNumbers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "integrationControlNumbers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "participantIdentifier": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "IdentifierType": {
+          "enum": [
+            "Undefined",
+            "SocialSecurityNumber",
+            "FileNumber",
+            "PolicyNumber",
+            "NameId",
+            "IntegrationControlNumber",
+            "ParticipantId"
+          ],
+          "type": "string"
+        },
+        "InsuranceDocument": {
+          "type": "object",
+          "properties": {
+            "systemOfRecord": {
+              "$ref": "#/components/schemas/SystemOfRecord"
+            },
+            "documentId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "documentMetaDataId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "dateCreated": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "insuranceFileNumber": {
+              "type": "string",
+              "nullable": true,
+              "readOnly": true
+            },
+            "identifier": {
+              "type": "string",
+              "nullable": true
+            },
+            "identifierType": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "policyNumber": {
+              "type": "string",
+              "nullable": true
+            },
+            "title": {
+              "type": "string",
+              "nullable": true
+            },
+            "category": {
+              "type": "string",
+              "nullable": true
+            },
+            "description": {
+              "type": "string",
+              "nullable": true
+            },
+            "documentTypeId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "dayNumber": {
+              "type": "string",
+              "nullable": true
+            },
+            "batchName": {
+              "type": "string",
+              "nullable": true
+            },
+            "division": {
+              "$ref": "#/components/schemas/Division"
+            },
+            "printStatus": {
+              "$ref": "#/components/schemas/PrintStatus"
+            },
+            "creatorUserId": {
+              "type": "string",
+              "nullable": true
+            },
+            "lastUpdatedDate": {
+              "type": "string",
+              "format": "date-time",
+              "nullable": true
+            },
+            "lastUpdatedUserId": {
+              "type": "string",
+              "nullable": true
+            },
+            "legacyDocType": {
+              "$ref": "#/components/schemas/DocumentTypeLegacy"
+            },
+            "pageCount": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "docFormat": {
+              "$ref": "#/components/schemas/Format"
+            },
+            "draftVersion": {
+              "type": "boolean"
+            },
+            "recId": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            },
+            "documentImage": {
+              "type": "string",
+              "format": "byte",
+              "nullable": true
+            },
+            "metaDataHistory": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/InsuranceDocument"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "InsuranceDocumentConnection": {
+          "type": "object",
+          "properties": {
+            "totalCount": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "pageInfo": {
+              "$ref": "#/components/schemas/PageInfo"
+            },
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/InsuranceDocument"
+              },
+              "nullable": true,
+              "readOnly": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "InsuranceDocumentInsert": {
+          "required": [
+            "creatorUserId",
+            "description",
+            "division",
+            "docFormat",
+            "documentImage",
+            "draftVersion",
+            "insuranceFileNumber"
+          ],
+          "type": "object",
+          "properties": {
+            "batchName": {
+              "maxLength": 17,
+              "type": "string",
+              "nullable": true
+            },
+            "creatorUserId": {
+              "maxLength": 50,
+              "minLength": 1,
+              "type": "string"
+            },
+            "dayNumber": {
+              "maxLength": 8,
+              "type": "string",
+              "nullable": true
+            },
+            "description": {
+              "maxLength": 255,
+              "minLength": 1,
+              "type": "string"
+            },
+            "division": {
+              "$ref": "#/components/schemas/Division"
+            },
+            "docFormat": {
+              "$ref": "#/components/schemas/Format"
+            },
+            "documentId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "documentImage": {
+              "type": "string",
+              "format": "byte"
+            },
+            "documentTypeId": {
+              "maximum": 191,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32"
+            },
+            "insuranceFileNumber": {
+              "maxLength": 17,
+              "minLength": 1,
+              "type": "string"
+            },
+            "identifierType": {
+              "maximum": 4,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32"
+            },
+            "policyNumber": {
+              "type": "string",
+              "nullable": true
+            },
+            "legacyDocType": {
+              "$ref": "#/components/schemas/DocumentTypeLegacy"
+            },
+            "printStatus": {
+              "$ref": "#/components/schemas/PrintStatus"
+            },
+            "recId": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            },
+            "draftVersion": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "InsuranceDocumentQuery": {
+          "type": "object",
+          "properties": {
+            "insuranceFileNumber": {
+              "type": "string",
+              "nullable": true
+            },
+            "documentId": {
+              "type": "string",
+              "format": "uuid",
+              "nullable": true
+            },
+            "documentSystemOfRecord": {
+              "$ref": "#/components/schemas/SystemOfRecord"
+            },
+            "recId": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            },
+            "printStatus": {
+              "$ref": "#/components/schemas/PrintStatus"
+            }
+          },
+          "additionalProperties": false
+        },
+        "InsuranceDocumentUpdate": {
+          "required": [
+            "insuranceFileNumber",
+            "systemOfRecord",
+            "updateUserId"
+          ],
+          "type": "object",
+          "properties": {
+            "batchName": {
+              "maxLength": 17,
+              "type": "string",
+              "nullable": true
+            },
+            "updateUserId": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "dayNumber": {
+              "maxLength": 8,
+              "type": "string",
+              "nullable": true
+            },
+            "description": {
+              "maxLength": 255,
+              "type": "string",
+              "nullable": true
+            },
+            "division": {
+              "$ref": "#/components/schemas/Division"
+            },
+            "docFormat": {
+              "$ref": "#/components/schemas/Format"
+            },
+            "documentId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "documentImage": {
+              "type": "string",
+              "format": "byte",
+              "nullable": true
+            },
+            "documentTypeId": {
+              "maximum": 191,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32"
+            },
+            "insuranceFileNumber": {
+              "maxLength": 17,
+              "minLength": 1,
+              "type": "string"
+            },
+            "identifierType": {
+              "maximum": 4,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32"
+            },
+            "policyNumber": {
+              "type": "string",
+              "nullable": true
+            },
+            "legacyDocType": {
+              "$ref": "#/components/schemas/DocumentTypeLegacy"
+            },
+            "printStatus": {
+              "$ref": "#/components/schemas/PrintStatus"
+            },
+            "recId": {
+              "type": "integer",
+              "format": "int64",
+              "nullable": true
+            },
+            "systemOfRecord": {
+              "$ref": "#/components/schemas/SystemOfRecord"
+            }
+          },
+          "additionalProperties": false
+        },
+        "InsuranceDocumentUpdateJsonPatchDocument": {
+          "type": "object",
+          "properties": {
+            "operations": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/InsuranceDocumentUpdateOperation"
+              },
+              "nullable": true,
+              "readOnly": true
+            },
+            "contractResolver": {
+              "$ref": "#/components/schemas/IContractResolver"
+            }
+          },
+          "additionalProperties": false,
+          "default": [
+            {
+              "op": "replace",
+              "path": "/property",
+              "value": "New Value"
+            },
+            {
+              "op": "add",
+              "path": "/property",
+              "value": "New Value"
+            },
+            {
+              "op": "remove",
+              "path": "/property"
+            },
+            {
+              "op": "copy",
+              "from": "/fromProperty",
+              "path": "/property"
+            },
+            {
+              "op": "move",
+              "from": "/fromProperty",
+              "path": "/property"
+            },
+            {
+              "op": "test",
+              "path": "/property",
+              "value": "Has Value"
+            },
+            {
+              "op": "test",
+              "path": "/property",
+              "value": "Has Value"
+            },
+            {
+              "op": "replace",
+              "path": "/arrayProperty/0",
+              "value": "Replace First Array Item"
+            },
+            {
+              "op": "replace",
+              "path": "/arrayProperty/-",
+              "value": "Replace Last Array Item"
+            }
+          ],
+          "externalDocs": {
+            "description": "JSON Patch Documentation",
+            "url": "http://jsonpatch.com/"
+          },
+          "example": [
+            {
+              "op": "replace",
+              "path": "/property",
+              "value": "New Value"
+            },
+            {
+              "op": "add",
+              "path": "/property",
+              "value": "New Value"
+            },
+            {
+              "op": "remove",
+              "path": "/property"
+            },
+            {
+              "op": "copy",
+              "from": "/fromProperty",
+              "path": "/property"
+            },
+            {
+              "op": "move",
+              "from": "/fromProperty",
+              "path": "/property"
+            },
+            {
+              "op": "test",
+              "path": "/property",
+              "value": "Has Value"
+            },
+            {
+              "op": "test",
+              "path": "/property",
+              "value": "Has Value"
+            },
+            {
+              "op": "replace",
+              "path": "/arrayProperty/0",
+              "value": "Replace First Array Item"
+            },
+            {
+              "op": "replace",
+              "path": "/arrayProperty/-",
+              "value": "Replace Last Array Item"
+            }
+          ]
+        },
+        "InsuranceDocumentUpdateOperation": {
+          "type": "object",
+          "properties": {
+            "operationType": {
+              "$ref": "#/components/schemas/OperationType"
+            },
+            "path": {
+              "type": "string",
+              "nullable": true
+            },
+            "op": {
+              "type": "string",
+              "nullable": true
+            },
+            "from": {
+              "type": "string",
+              "nullable": true
+            },
+            "value": {
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Login": {
+          "required": [
+            "email",
+            "password"
+          ],
+          "type": "object",
+          "properties": {
+            "email": {
+              "minLength": 1,
+              "type": "string",
+              "format": "email"
+            },
+            "password": {
+              "maxLength": 100,
+              "minLength": 16,
+              "type": "string",
+              "format": "password"
+            }
+          },
+          "additionalProperties": false,
+          "default": {
+            "Email": "noreply@va.gov",
+            "Password": "bc18b14711a847bbb78511a2eb0bb16f"
+          },
+          "example": {
+            "Email": "noreply@va.gov",
+            "Password": "bc18b14711a847bbb78511a2eb0bb16f"
+          }
+        },
+        "OperationType": {
+          "enum": [
+            "Add",
+            "Remove",
+            "Replace",
+            "Move",
+            "Copy",
+            "Test",
+            "Invalid"
+          ],
+          "type": "string"
+        },
+        "PageInfo": {
+          "type": "object",
+          "properties": {
+            "count": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "hasNextPage": {
+              "type": "boolean"
+            },
+            "hasPreviousPage": {
+              "type": "boolean"
+            },
+            "nextPageUrl": {
+              "type": "string",
+              "format": "uri",
+              "nullable": true
+            },
+            "previousPageUrl": {
+              "type": "string",
+              "format": "uri",
+              "nullable": true
+            },
+            "firstPageUrl": {
+              "type": "string",
+              "format": "uri",
+              "nullable": true
+            },
+            "lastPageUrl": {
+              "type": "string",
+              "format": "uri",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "PrintStatus": {
+          "enum": [
+            "Undefined",
+            "Print",
+            "Printed"
+          ],
+          "type": "string"
+        },
+        "ProblemDetails": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "nullable": true
+            },
+            "title": {
+              "type": "string",
+              "nullable": true
+            },
+            "status": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "detail": {
+              "type": "string",
+              "nullable": true
+            },
+            "instance": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": { }
+        },
+        "Registration": {
+          "required": [
+            "claims",
+            "email",
+            "password"
+          ],
+          "type": "object",
+          "properties": {
+            "email": {
+              "minLength": 1,
+              "type": "string",
+              "format": "email"
+            },
+            "password": {
+              "maxLength": 100,
+              "minLength": 16,
+              "type": "string",
+              "format": "password"
+            },
+            "confirmPassword": {
+              "type": "string",
+              "format": "password",
+              "nullable": true
+            },
+            "claims": {
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false,
+          "default": {
+            "Email": "noreply@va.gov",
+            "Password": "6a6167db9aa74535a9c6e2490728013d",
+            "ConfirmPassword": "6a6167db9aa74535a9c6e2490728013d",
+            "Claims": [
+              "CanGetIdentifier",
+              "CanManageAccounts",
+              "CanRemovePendingStatus",
+              "CanUpdateLipasPolicy"
+            ]
+          },
+          "example": {
+            "Email": "noreply@va.gov",
+            "Password": "6a6167db9aa74535a9c6e2490728013d",
+            "ConfirmPassword": "6a6167db9aa74535a9c6e2490728013d",
+            "Claims": [
+              "CanGetIdentifier",
+              "CanManageAccounts",
+              "CanRemovePendingStatus",
+              "CanUpdateLipasPolicy"
+            ]
+          }
+        },
+        "RegistrationResult": {
+          "type": "object",
+          "properties": {
+            "userName": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "SdviApplicationPatchJsonPatchDocument": {
+          "type": "object",
+          "properties": {
+            "operations": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/SdviApplicationPatchOperation"
+              },
+              "nullable": true,
+              "readOnly": true
+            },
+            "contractResolver": {
+              "$ref": "#/components/schemas/IContractResolver"
+            }
+          },
+          "additionalProperties": false,
+          "default": [
+            {
+              "op": "replace",
+              "path": "/property",
+              "value": "New Value"
+            },
+            {
+              "op": "add",
+              "path": "/property",
+              "value": "New Value"
+            },
+            {
+              "op": "remove",
+              "path": "/property"
+            },
+            {
+              "op": "copy",
+              "from": "/fromProperty",
+              "path": "/property"
+            },
+            {
+              "op": "move",
+              "from": "/fromProperty",
+              "path": "/property"
+            },
+            {
+              "op": "test",
+              "path": "/property",
+              "value": "Has Value"
+            },
+            {
+              "op": "test",
+              "path": "/property",
+              "value": "Has Value"
+            },
+            {
+              "op": "replace",
+              "path": "/arrayProperty/0",
+              "value": "Replace First Array Item"
+            },
+            {
+              "op": "replace",
+              "path": "/arrayProperty/-",
+              "value": "Replace Last Array Item"
+            }
+          ],
+          "externalDocs": {
+            "description": "JSON Patch Documentation",
+            "url": "http://jsonpatch.com/"
+          },
+          "example": [
+            {
+              "op": "replace",
+              "path": "/property",
+              "value": "New Value"
+            },
+            {
+              "op": "add",
+              "path": "/property",
+              "value": "New Value"
+            },
+            {
+              "op": "remove",
+              "path": "/property"
+            },
+            {
+              "op": "copy",
+              "from": "/fromProperty",
+              "path": "/property"
+            },
+            {
+              "op": "move",
+              "from": "/fromProperty",
+              "path": "/property"
+            },
+            {
+              "op": "test",
+              "path": "/property",
+              "value": "Has Value"
+            },
+            {
+              "op": "test",
+              "path": "/property",
+              "value": "Has Value"
+            },
+            {
+              "op": "replace",
+              "path": "/arrayProperty/0",
+              "value": "Replace First Array Item"
+            },
+            {
+              "op": "replace",
+              "path": "/arrayProperty/-",
+              "value": "Replace Last Array Item"
+            }
+          ]
+        },
+        "SdviApplicationPatchOperation": {
+          "type": "object",
+          "properties": {
+            "operationType": {
+              "$ref": "#/components/schemas/OperationType"
+            },
+            "path": {
+              "type": "string",
+              "nullable": true
+            },
+            "op": {
+              "type": "string",
+              "nullable": true
+            },
+            "from": {
+              "type": "string",
+              "nullable": true
+            },
+            "value": {
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "SystemOfRecord": {
+          "enum": [
+            "Undefined",
+            "Archive",
+            "OnBase",
+            "Efolder",
+            "Sql"
+          ],
+          "type": "string"
+        },
+        "TokenResult": {
+          "type": "object",
+          "properties": {
+            "token": {
+              "type": "string",
+              "nullable": true
+            },
+            "expiration": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "securitySchemes": {
+        "Bearer": {
+          "type": "apiKey",
+          "description": "Please enter 'Bearer' followed by a token, separated by a space. Ex.: \"Bearer 123xyz\".",
+          "name": "Authorization",
+          "in": "header"
+        }
+      }
+    },
+    "security": [
+      {
+        "Bearer": [ ]
+      }
+    ]
+  }
