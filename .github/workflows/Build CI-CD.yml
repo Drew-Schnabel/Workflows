@@ -91,73 +91,23 @@ jobs:
         tail ./mockoon-*.log
 
 
-    # Step 7: Verify Mockoon Server is Running
-    - name: Validate Mockoon Endpoints
+# Step 7: Verify Mockoon Server is Running
+    - name: Validate Mockoon Servers
       run: |
-        # LPRestClaim
-        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3000/LPRestClaim \
-          -H "Content-Type: application/json" -d '{}' || echo "Port 3000 failed"
+        # Define the ports to check
+        ports=(3000 3001 3002 3003 3004 3005 3006 3007 3008)
 
-        # LPRestParty
-        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3001/LPRestParty \
-          -H "Content-Type: application/json" -d '{}' || echo "Port 3001 failed"
-
-        # LPRestPolicy
-        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3002/LPRestPolicy \
-          -H "Content-Type: application/json" -d '{}' || echo "Port 3002 failed"
-
-        # LPRestProduct
-        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3003/LPRestProduct \
-          -H "Content-Type: application/json" -d '{}' || echo "Port 3003 failed"
-
-        # Authz Token
-        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3004/authz/token \
-          -H "Content-Type: application/json" -d '{}' || echo "Port 3004 failed"
-
-        # CommonService
-        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3005/ulissia-webservices/services/CommonService?wsdl \
-          -H "Content-Type: text/xml" \
-          -d '<?xml version="1.0" encoding="UTF-8"?>
-              <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-                <soapenv:Header/>
-                <soapenv:Body>
-                  <ns1:Request xmlns:ns1="http://example.com/commonservice">
-                    <ns1:Parameter>Value</ns1:Parameter>
-                  </ns1:Request>
-                </soapenv:Body>
-              </soapenv:Envelope>' || echo "Port 3005 failed"
-
-        # UnderwritingService
-        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3006/ulissia-webservices/services/UnderwritingService?wsdl \
-          -H "Content-Type: text/xml" \
-          -d '<?xml version="1.0" encoding="UTF-8"?>
-              <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-                <soapenv:Header/>
-                <soapenv:Body>
-                  <ns1:Request xmlns:ns1="http://example.com/underwritingservice">
-                    <ns1:Parameter>Value</ns1:Parameter>
-                  </ns1:Request>
-                </soapenv:Body>
-              </soapenv:Envelope>' || echo "Port 3006 failed"
-
-        # WorkflowService
-        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3007/ulissia-webservices/services/WorkflowService?wsdl \
-          -H "Content-Type: text/xml" \
-          -d '<?xml version="1.0" encoding="UTF-8"?>
-              <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
-                <soapenv:Header/>
-                <soapenv:Body>
-                  <ns1:Request xmlns:ns1="http://example.com/workflowservice">
-                    <ns1:Parameter>Value</ns1:Parameter>
-                  </ns1:Request>
-                </soapenv:Body>
-              </soapenv:Envelope>' || echo "Port 3007 failed"
-
-        # InsuranceServices
-        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3008/InsuranceServices \
-          -H "Content-Type: application/json" -d '{}' || echo "Port 3008 failed"
-
-
-
+        # Check if each port is open
+        for port in "${ports[@]}"; do
+          for i in {1..10}; do
+            # Check if the port is listening using netcat
+            if nc -zv localhost $port 2>/dev/null; then
+              echo "Mockoon server on port $port is ready"
+              break
+            fi
+            echo "Waiting for Mockoon server on port $port..."
+            sleep 3
+          done
+        done
 
 
