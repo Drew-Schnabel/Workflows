@@ -12,7 +12,7 @@
         "uuid": "d2422419-9fb9-45ba-9075-5f8e891b580a",
         "type": "http",
         "documentation": "",
-        "method": "get",
+        "method": "POST",
         "endpoint": "",
         "responses": [
           {

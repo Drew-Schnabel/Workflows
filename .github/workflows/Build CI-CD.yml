@@ -95,23 +95,23 @@ jobs:
     - name: Validate Mockoon Endpoints
       run: |
         # LPRestClaim
-        curl -s -X GET -o /dev/null -w "%{http_code}" http://localhost:3000/LPRestClaim \
+        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3000/LPRestClaim \
           -H "Content-Type: application/json" -d '{}' || echo "Port 3000 failed"
 
         # LPRestParty
-        curl -s -X GET -o /dev/null -w "%{http_code}" http://localhost:3001/LPRestParty \
+        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3001/LPRestParty \
           -H "Content-Type: application/json" -d '{}' || echo "Port 3001 failed"
 
         # LPRestPolicy
-        curl -s -X GET -o /dev/null -w "%{http_code}" http://localhost:3002/LPRestPolicy \
+        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3002/LPRestPolicy \
           -H "Content-Type: application/json" -d '{}' || echo "Port 3002 failed"
 
         # LPRestProduct
-        curl -s -X GET -o /dev/null -w "%{http_code}" http://localhost:3003/LPRestProduct \
+        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3003/LPRestProduct \
           -H "Content-Type: application/json" -d '{}' || echo "Port 3003 failed"
 
         # Authz Token
-        curl -s -X GET -o /dev/null -w "%{http_code}" http://localhost:3004/authz/token \
+        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3004/authz/token \
           -H "Content-Type: application/json" -d '{}' || echo "Port 3004 failed"
 
         # CommonService
