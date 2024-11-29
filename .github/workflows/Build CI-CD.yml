@@ -115,7 +115,7 @@ jobs:
           -H "Content-Type: application/json" -d '{}' || echo "Port 3004 failed"
 
         # CommonService
-        curl -s -X GET -o /dev/null -w "%{http_code}" http://localhost:3005/ulissia-webservices/services/CommonService?wsdl \
+        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3005/ulissia-webservices/services/CommonService?wsdl \
           -H "Content-Type: text/xml" \
           -d '<?xml version="1.0" encoding="UTF-8"?>
               <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
@@ -128,7 +128,7 @@ jobs:
               </soapenv:Envelope>' || echo "Port 3005 failed"
 
         # UnderwritingService
-        curl -s -X GET -o /dev/null -w "%{http_code}" http://localhost:3006/ulissia-webservices/services/UnderwritingService?wsdl \
+        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3006/ulissia-webservices/services/UnderwritingService?wsdl \
           -H "Content-Type: text/xml" \
           -d '<?xml version="1.0" encoding="UTF-8"?>
               <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
@@ -141,7 +141,7 @@ jobs:
               </soapenv:Envelope>' || echo "Port 3006 failed"
 
         # WorkflowService
-        curl -s -X GET -o /dev/null -w "%{http_code}" http://localhost:3007/ulissia-webservices/services/WorkflowService?wsdl \
+        curl -s -X POST -o /dev/null -w "%{http_code}" http://localhost:3007/ulissia-webservices/services/WorkflowService?wsdl \
           -H "Content-Type: text/xml" \
           -d '<?xml version="1.0" encoding="UTF-8"?>
               <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
