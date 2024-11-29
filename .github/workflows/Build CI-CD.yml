@@ -64,6 +64,8 @@ jobs:
         nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestPartyAPI.json --port 3001 > ./mockoon-3001.log 2>&1 &
         nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestPolicyAPI.json --port 3002 > ./mockoon-3002.log 2>&1 &
         nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestProductAPI.json --port 3003 > ./mockoon-3003.log 2>&1 &
+        nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_UserMgmtService.json --port 3004 > ./mockoon-3004.log 2>&1 &
+
 
     - name: Wait for Mockoon Servers to Start
       run: |
@@ -89,4 +91,5 @@ jobs:
         curl http://localhost:3001/LPRestParty
         curl http://localhost:3002/LPRestPolicy
         curl http://localhost:3003/LPRestProduct
+        curl http://localhost:3004/authz/token
 

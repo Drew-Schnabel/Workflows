@@ -1,0 +1,94 @@
+{
+    "uuid": "f6b40aae-b4a7-40cd-9569-8751b252d5ed",
+    "lastMigration": 33,
+    "name": "EXL LifePRO UserMgmtServiceAPI",
+    "endpointPrefix": "",
+    "latency": 0,
+    "port": 3004,
+    "hostname": "",
+    "folders": [],
+    "routes": [
+      {
+        "uuid": "d2422419-9fb9-45ba-9075-5f8e891b580a",
+        "type": "http",
+        "documentation": "",
+        "method": "get",
+        "endpoint": "",
+        "responses": [
+          {
+            "uuid": "0567bec8-bad3-4576-b45b-bd6c42707c43",
+            "body": "{}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "",
+            "headers": [],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      }
+    ],
+    "rootChildren": [
+      {
+        "type": "route",
+        "uuid": "d2422419-9fb9-45ba-9075-5f8e891b580a"
+      }
+    ],
+    "proxyMode": false,
+    "proxyHost": "",
+    "proxyRemovePrefix": false,
+    "tlsOptions": {
+      "enabled": false,
+      "type": "CERT",
+      "pfxPath": "",
+      "certPath": "",
+      "keyPath": "",
+      "caPath": "",
+      "passphrase": ""
+    },
+    "cors": true,
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Access-Control-Allow-Origin",
+        "value": "*"
+      },
+      {
+        "key": "Access-Control-Allow-Methods",
+        "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+      },
+      {
+        "key": "Access-Control-Allow-Headers",
+        "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+      }
+    ],
+    "proxyReqHeaders": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "proxyResHeaders": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "data": [],
+    "callbacks": []
+  }
