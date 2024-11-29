@@ -76,12 +76,12 @@ jobs:
             echo "Waiting for Mockoon server on port $port..."
             sleep 3
           done
-    done
+        done
 
     - name: Check Mockoon Logs
       run: |
         tail ./mockoon-*.log
-        
+
     # Step 7: Verify Mockoon Server is Running
     - name: Verify Mockoon Server
       run: |
