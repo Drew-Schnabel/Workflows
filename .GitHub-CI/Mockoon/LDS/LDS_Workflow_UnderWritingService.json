@@ -1,5 +1,5 @@
 {
-    "name": "Workflow Service",
+    "name": "Underwriting Service",
     "port": 3006,
     "routes": [
       {
