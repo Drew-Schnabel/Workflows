@@ -1,0 +1,54 @@
+name: CI Pipeline with MSSQL Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  mssql:
+    runs-on: ubuntu-latest
+
+    services:
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        env:
+          ACCEPT_EULA: "Y"                   # Accept the license agreement
+          SA_PASSWORD: "12345" # Define a strong password for SA user
+        ports:
+          - 1433:1433
+
+    steps:
+    # Step 1: Checkout the Repository
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    # Step 2: Wait for SQL Server to Start
+    - name: Wait for SQL Server to Initialize
+      run: |
+        echo "Waiting for SQL Server to start..."
+        sleep 15
+
+    # Step 3: Install SQLCMD Tool
+    - name: Install SQLCMD Tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y mssql-tools unixodbc-dev
+        echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+        source ~/.bashrc
+
+    # Step 4: Create Database and Tables
+    - name: Execute SQL Scripts from Folder
+      run: |
+        for file in ./.GitHub-CI/Database/*.sql; do
+          echo "Executing $file..."
+          /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "YourStrong!Passw0rd" -i $file
+        done
+
+    # Step 5: Pull Down the Repository Copy
+    - name: Pull Down Repository Copy
+      run: |
+        git clone https://github.com/${{ github.repository }} cloned-repo
+        ls cloned-repo
+
+
