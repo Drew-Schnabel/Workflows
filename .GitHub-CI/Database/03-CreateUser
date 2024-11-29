@@ -1,0 +1,15 @@
+USE master;
+CREATE LOGIN InsuranceBusinessServices WITH PASSWORD = '12345';
+CREATE USER InsuranceBusinessServices FOR LOGIN InsuranceBusinessServices;
+ALTER ROLE db_datareader ADD MEMBER InsuranceBusinessServices;
+ALTER ROLE db_datawriter ADD MEMBER InsuranceBusinessServices;
+
+GRANT ALTER, SELECT, INSERT, UPDATE, DELETE ON SCHEMA::InsuranceBusinessService TO [InsuranceBusinessServices];
+
+Use InSentry;
+CREATE LOGIN InsuranceBusinessServices WITH PASSWORD = '12345';
+CREATE USER InsuranceBusinessServices FOR LOGIN InsuranceBusinessServices;
+ALTER ROLE db_datareader ADD MEMBER InsuranceBusinessServices;
+ALTER ROLE db_datawriter ADD MEMBER InsuranceBusinessServices;
+
+GRANT ALTER, SELECT, INSERT, UPDATE, DELETE ON SCHEMA::InsuranceBusinessService TO [InsuranceBusinessServices];

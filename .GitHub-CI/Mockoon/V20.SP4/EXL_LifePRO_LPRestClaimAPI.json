@@ -1,0 +1,1362 @@
+{
+    "uuid": "499d7b7f-7572-4390-a997-70f98b23b761",
+    "lastMigration": 33,
+    "name": "ExlLifePRO.RestClaimService - v20.sp4",
+    "endpointPrefix": "",
+    "latency": 0,
+    "port": 3000,
+    "hostname": "",
+    "folders": [],
+    "routes": [
+      {
+        "uuid": "cb360049-326d-4ce4-b168-076b725b1d2b",
+        "type": "http",
+        "documentation": "GetClaimList.",
+        "method": "get",
+        "endpoint": "LPRestClaimAPI/v1/Claim/:GUID/:CompanyCode/:PolicyNumber/GetClaimList",
+        "responses": [
+          {
+            "uuid": "a9a004ed-3090-49ef-83fc-dffd7e286f36",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"Data\": {\n    \"ClaimList\": [\n      {\n        \"PolicyNumber\": \"\",\n        \"CompanyCode\": \"\",\n        \"Claimant\": \"\",\n        \"ClaimNumber\": \"\",\n        \"Status\": \"\",\n        \"Diagnosis\": \"\",\n        \"DiagnosisCode\": \"\",\n        \"Incurred\": \"\",\n        \"ProviderName\": \"\",\n        \"BlockId\": \"\",\n        \"Notes\": \"\",\n        \"Owner\": \"\",\n        \"DateReceived\": {{faker 'number.int' max=99999}},\n        \"PatientNameId\": {{faker 'number.int' max=99999}},\n        \"InsuredNameId\": {{faker 'number.int' max=99999}},\n        \"DateAdded\": {{faker 'number.int' max=99999}},\n        \"TimeAdded\": {{faker 'number.int' max=99999}},\n        \"CodrAdded\": \"\",\n        \"DateUpdated\": {{faker 'number.int' max=99999}},\n        \"TimeUpdated\": {{faker 'number.int' max=99999}},\n        \"CodrUpdated\": \"\",\n        \"StatusCode\": {{faker 'number.int' max=99999}},\n        \"ReasonCode\": \"\",\n        \"CoderOwner\": \"\",\n        \"ProductId\": \"\",\n        \"DateIncurred\": {{faker 'number.int' max=99999}},\n        \"BlockType\": \"\",\n        \"Relationship\": {{faker 'number.int' max=99999}},\n        \"EliminationFrom\": {{faker 'number.int' max=99999}},\n        \"EliminationThru\": {{faker 'number.int' max=99999}},\n        \"SenderId\": \"\",\n        \"SProviderNameId\": {{faker 'number.int' max=99999}},\n        \"SDiagnosisCode\": \"\",\n        \"WorkRelated\": \"\",\n        \"SPatientNumber\": \"\",\n        \"SAssignBens\": \"\",\n        \"SAccident\": \"\",\n        \"STotalCharges\": {{faker 'number.float'}},\n        \"SPayeeNameId\": {{faker 'number.int' max=99999}},\n        \"SCauseCode\": \"\",\n        \"SBillType\": \"\",\n        \"LastDayWorked\": {{faker 'number.int' max=99999}},\n        \"DateRtrnToWork\": {{faker 'number.int' max=99999}},\n        \"RProviderNameId\": {{faker 'number.int' max=99999}},\n        \"RDiagnosisCode\": \"\",\n        \"RProcedureCode\": \"\",\n        \"REstDur\": {{faker 'number.int' max=99999}},\n        \"REstDurFlag\": \"\",\n        \"REstAmt\": {{faker 'number.float'}},\n        \"RBenSelectSeq\": {{faker 'number.int' max=99999}},\n        \"REligibilityDate\": {{faker 'number.int' max=99999}},\n        \"LProviderNameId\": {{faker 'number.int' max=99999}},\n        \"LDiagnosisCode\": \"\",\n        \"LPhysicianNameid\": {{faker 'number.int' max=99999}},\n        \"LHospitalNameId\": {{faker 'number.int' max=99999}},\n        \"LProcedureCode\": \"\",\n        \"LEstDur\": {{faker 'number.int' max=99999}},\n        \"LEstDurFlag\": \"\",\n        \"LPayeeNameId\": {{faker 'number.int' max=99999}},\n        \"LEstAmt\": {{faker 'number.float'}},\n        \"MBillType\": \"\",\n        \"MDiagnosisCode\": \"\",\n        \"MAcceptsAssignmt\": \"\",\n        \"MAssignmentBens\": \"\",\n        \"MAccident\": \"\",\n        \"MWorkRelated\": \"\",\n        \"MPatientNumber\": \"\",\n        \"MIcnNumber\": \"\",\n        \"MTypeOfBill\": \"\",\n        \"MAdmitType\": \"\",\n        \"MProviderNameId\": {{faker 'number.int' max=99999}},\n        \"MTotalCharges\": {{faker 'number.float'}},\n        \"MPayeeNameId\": {{faker 'number.int' max=99999}},\n        \"MCauseCode\": \"\",\n        \"DFlag\": \"\",\n        \"DBenefitSeq\": {{faker 'number.int' max=99999}},\n        \"DDateOfDeath\": {{faker 'number.int' max=99999}},\n        \"DProofOfLoss\": {{faker 'number.int' max=99999}},\n        \"DAccident\": \"\",\n        \"DDiagnosisCode1\": \"\",\n        \"DDiagnosisCode2\": \"\",\n        \"DDiagnosisCode3\": \"\",\n        \"DDiagnosisCode4\": \"\",\n        \"DPremiumRefund\": \"\",\n        \"ProviderNumber\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "f1cf1f30-1691-4740-b056-4520d69e4d10",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "d4c169c4-1f35-43ac-873d-d5a4653dd51d",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "a082891a-9744-4143-830f-d45c2583b9d3",
+        "type": "http",
+        "documentation": "GetClaimListByNameId.",
+        "method": "get",
+        "endpoint": "LPRestClaimAPI/v1/Claim/:GUID/:NameId/GetClaimListByNameId",
+        "responses": [
+          {
+            "uuid": "03894022-ce68-478e-bdc0-9f197bd433f9",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"Data\": {\n    \"ClaimList\": [\n      {\n        \"PolicyNumber\": \"\",\n        \"CompanyCode\": \"\",\n        \"Claimant\": \"\",\n        \"ClaimNumber\": \"\",\n        \"Status\": \"\",\n        \"Diagnosis\": \"\",\n        \"DiagnosisCode\": \"\",\n        \"Incurred\": \"\",\n        \"ProviderName\": \"\",\n        \"BlockId\": \"\",\n        \"Notes\": \"\",\n        \"Owner\": \"\",\n        \"DateReceived\": {{faker 'number.int' max=99999}},\n        \"PatientNameId\": {{faker 'number.int' max=99999}},\n        \"InsuredNameId\": {{faker 'number.int' max=99999}},\n        \"DateAdded\": {{faker 'number.int' max=99999}},\n        \"TimeAdded\": {{faker 'number.int' max=99999}},\n        \"CodrAdded\": \"\",\n        \"DateUpdated\": {{faker 'number.int' max=99999}},\n        \"TimeUpdated\": {{faker 'number.int' max=99999}},\n        \"CodrUpdated\": \"\",\n        \"StatusCode\": {{faker 'number.int' max=99999}},\n        \"ReasonCode\": \"\",\n        \"CoderOwner\": \"\",\n        \"ProductId\": \"\",\n        \"DateIncurred\": {{faker 'number.int' max=99999}},\n        \"BlockType\": \"\",\n        \"Relationship\": {{faker 'number.int' max=99999}},\n        \"EliminationFrom\": {{faker 'number.int' max=99999}},\n        \"EliminationThru\": {{faker 'number.int' max=99999}},\n        \"SenderId\": \"\",\n        \"SProviderNameId\": {{faker 'number.int' max=99999}},\n        \"SDiagnosisCode\": \"\",\n        \"WorkRelated\": \"\",\n        \"SPatientNumber\": \"\",\n        \"SAssignBens\": \"\",\n        \"SAccident\": \"\",\n        \"STotalCharges\": {{faker 'number.float'}},\n        \"SPayeeNameId\": {{faker 'number.int' max=99999}},\n        \"SCauseCode\": \"\",\n        \"SBillType\": \"\",\n        \"LastDayWorked\": {{faker 'number.int' max=99999}},\n        \"DateRtrnToWork\": {{faker 'number.int' max=99999}},\n        \"RProviderNameId\": {{faker 'number.int' max=99999}},\n        \"RDiagnosisCode\": \"\",\n        \"RProcedureCode\": \"\",\n        \"REstDur\": {{faker 'number.int' max=99999}},\n        \"REstDurFlag\": \"\",\n        \"REstAmt\": {{faker 'number.float'}},\n        \"RBenSelectSeq\": {{faker 'number.int' max=99999}},\n        \"REligibilityDate\": {{faker 'number.int' max=99999}},\n        \"LProviderNameId\": {{faker 'number.int' max=99999}},\n        \"LDiagnosisCode\": \"\",\n        \"LPhysicianNameid\": {{faker 'number.int' max=99999}},\n        \"LHospitalNameId\": {{faker 'number.int' max=99999}},\n        \"LProcedureCode\": \"\",\n        \"LEstDur\": {{faker 'number.int' max=99999}},\n        \"LEstDurFlag\": \"\",\n        \"LPayeeNameId\": {{faker 'number.int' max=99999}},\n        \"LEstAmt\": {{faker 'number.float'}},\n        \"MBillType\": \"\",\n        \"MDiagnosisCode\": \"\",\n        \"MAcceptsAssignmt\": \"\",\n        \"MAssignmentBens\": \"\",\n        \"MAccident\": \"\",\n        \"MWorkRelated\": \"\",\n        \"MPatientNumber\": \"\",\n        \"MIcnNumber\": \"\",\n        \"MTypeOfBill\": \"\",\n        \"MAdmitType\": \"\",\n        \"MProviderNameId\": {{faker 'number.int' max=99999}},\n        \"MTotalCharges\": {{faker 'number.float'}},\n        \"MPayeeNameId\": {{faker 'number.int' max=99999}},\n        \"MCauseCode\": \"\",\n        \"DFlag\": \"\",\n        \"DBenefitSeq\": {{faker 'number.int' max=99999}},\n        \"DDateOfDeath\": {{faker 'number.int' max=99999}},\n        \"DProofOfLoss\": {{faker 'number.int' max=99999}},\n        \"DAccident\": \"\",\n        \"DDiagnosisCode1\": \"\",\n        \"DDiagnosisCode2\": \"\",\n        \"DDiagnosisCode3\": \"\",\n        \"DDiagnosisCode4\": \"\",\n        \"DPremiumRefund\": \"\",\n        \"ProviderNumber\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "041a7da9-6a6d-4d8a-923e-213443321220",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "83093f73-086d-4d7d-9787-9c6d01da1d88",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "df91ad53-ffec-4b29-bd1e-a64b8011b087",
+        "type": "http",
+        "documentation": "GetClaimNumberDetail.",
+        "method": "get",
+        "endpoint": "LPRestClaimAPI/v1/Claim/:GUID/:CompanyCode/:ClaimNumber/:WritingSystemFlag/GetClaimNumberDetail",
+        "responses": [
+          {
+            "uuid": "04b0ac5c-3b2a-414a-b561-8ccef3039c84",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"ClaimNumberDetail\": [\n    {\n      \"BenefitCode\": \"\",\n      \"Status\": \"\",\n      \"Diagnosis\": \"\",\n      \"DiagnosisCode\": \"\",\n      \"ChargeAmount\": {{faker 'number.float'}},\n      \"PaymentAmount\": {{faker 'number.float'}},\n      \"PaymentDate\": \"\",\n      \"Payee\": \"\",\n      \"ThirdPartyPayee\": \"\",\n      \"PayeeType\": \"\",\n      \"CheckNumber\": {{faker 'number.int' max=99999}},\n      \"ClaimSequence\": {{faker 'number.int' max=99999}},\n      \"PaySequence\": {{faker 'number.int' max=99999}},\n      \"AdjustmentSequence\": {{faker 'number.int' max=99999}},\n      \"Notes\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "36e821eb-6621-4460-a689-4461532476cc",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "5cc837f5-73c4-4988-af19-1083bad7f87b",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "5fb2e542-288c-44eb-a42b-b3047ec2a3ae",
+        "type": "http",
+        "documentation": "GetMedicareSupplementalClaimDetail.",
+        "method": "get",
+        "endpoint": "LPRestClaimAPI/v1/Claim/:GUID/:companyCode/:claimNumber/:detailSeq/:paymentSeq/:adjSeq/GetMedicareSupplementalClaimDetail",
+        "responses": [
+          {
+            "uuid": "6ed5949c-10d7-46b1-9f1c-360ae22c13fd",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"MedicareSupplementClaimDetailResponse\": {\n    \"AdditionalBenefit\": {{faker 'number.float'}},\n    \"AdjSeq\": {{faker 'number.int' max=99999}},\n    \"ServiceBeginDate\": {{faker 'number.int' max=99999}},\n    \"BenefitCode\": \"\",\n    \"ServiceEndDate\": {{faker 'number.int' max=99999}},\n    \"BenefitSeq\": {{faker 'number.int' max=99999}},\n    \"ContributionPct\": {{faker 'number.float'}},\n    \"CalcedAdditionalBenefit\": {{faker 'number.float'}},\n    \"CalcedCoinsuranceAmount\": {{faker 'number.float'}},\n    \"CalcedDeductibleAmount\": {{faker 'number.float'}},\n    \"CalcedProviderDiscountAmount\": {{faker 'number.float'}},\n    \"CauseCode\": \"\",\n    \"ClaimNumber\": \"\",\n    \"CoinsuranceAmount\": {{faker 'number.float'}},\n    \"DateReceived\": {{faker 'number.int' max=99999}},\n    \"AdditionalInfoDate\": {{faker 'number.int' max=99999}},\n    \"DaysUnits\": {{faker 'number.int' max=99999}},\n    \"DeductibleApplied\": {{faker 'number.float'}},\n    \"DetailSeq\": {{faker 'number.int' max=99999}},\n    \"DiagnosisCode\": \"\",\n    \"Discount\": {{faker 'number.float'}},\n    \"DiscountRemark\": \"\",\n    \"CalcedEligibleAmount\": {{faker 'number.float'}},\n    \"CalcedExcessOutOfPocket\": {{faker 'number.float'}},\n    \"IcnNumber\": \"\",\n    \"IneligibleAmount\": {{faker 'number.float'}},\n    \"IneligibleRemark\": \"\",\n    \"Interest\": {{faker 'number.float'}},\n    \"OtherInsuranceApproved\": {{faker 'number.float'}},\n    \"OtherInsuranceBloodDeduct\": {{faker 'number.float'}},\n    \"OtherInsuranceCoinsurance\": {{faker 'number.float'}},\n    \"OtherInsuranceDeduct\": {{faker 'number.float'}},\n    \"OtherInsurancePaid\": {{faker 'number.float'}},\n    \"OverrideEligibleFlag\": \"\",\n    \"PatientNumber\": \"\",\n    \"PayeeCodeFlag\": \"\",\n    \"PaymentAmount\": {{faker 'number.float'}},\n    \"PaymentDate\": {{faker 'number.int' max=99999}},\n    \"PaymentInitiationDate\": {{faker 'number.int' max=99999}},\n    \"PlaceOfService\": \"\",\n    \"PolicyNumber\": \"\",\n    \"ProcedureCode\": \"\",\n    \"ProcedureModifier\": \"\",\n    \"ProcedureModifier2\": \"\",\n    \"ProviderDiscount\": {{faker 'number.float'}},\n    \"StatusReason\": \"\",\n    \"RecordStatus\": \"\",\n    \"ToothNumber\": \"\",\n    \"TotalChargeAmount\": {{faker 'number.float'}},\n    \"TotalEligibleAmount\": {{faker 'number.float'}},\n    \"TotalExcludedDenied\": {{faker 'number.float'}},\n    \"TypeOfService\": \"\",\n    \"Withholding\": {{faker 'number.float'}},\n    \"PatientName\": \"\",\n    \"PayeeName\": \"\",\n    \"ProviderName\": \"\",\n    \"CompanyCode\": \"\",\n    \"NumberOfUnits\": {{faker 'number.float'}},\n    \"PatientDob\": {{faker 'number.int' max=99999}},\n    \"PatientSexCode\": \"\",\n    \"PatientSsn\": \"\",\n    \"ProviderSpecialty\": \"\",\n    \"DiagnosisDescription\": \"\",\n    \"BillType\": \"\",\n    \"DocumentNumber\": \"\",\n    \"BenefitCodeDescription\": \"\",\n    \"MedicareHicnNumber\": \"\",\n    \"ProcedureName\": \"\",\n    \"ProviderNumber\": \"\",\n    \"MedicareID\": \"\"\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "0b94bf90-bc65-443e-ba9f-9de7de91da9a",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "5c48a338-603a-44d2-8b4e-f9116858cd00",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "865d6aab-f5ea-4691-9ec5-05a51f16e93c",
+        "type": "http",
+        "documentation": "GetStandardMedicalClaimDetail.",
+        "method": "get",
+        "endpoint": "LPRestClaimAPI/v1/Claim/:GUID/:companyCode/:claimNumber/:detailSeq/:paymentSeq/:adjSeq/GetStandardMedicalClaimDetail",
+        "responses": [
+          {
+            "uuid": "4dfbe1f5-58bf-46e0-bdf8-b304e825a522",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"StandardMedicalClaimDetailResponse\": {\n    \"AdditionalBenefit\": {{faker 'number.float'}},\n    \"AdjSeq\": {{faker 'number.int' max=99999}},\n    \"ServiceBeginDate\": {{faker 'number.int' max=99999}},\n    \"BenefitCode\": \"\",\n    \"ServiceEndDate\": {{faker 'number.int' max=99999}},\n    \"BenefitSeq\": {{faker 'number.int' max=99999}},\n    \"ContributionPct\": {{faker 'number.float'}},\n    \"CalcedAdditionalBenefit\": {{faker 'number.float'}},\n    \"CalcedCoinsuranceAmount\": {{faker 'number.float'}},\n    \"CalcedDeductibleAmount\": {{faker 'number.float'}},\n    \"CauseCode\": \"\",\n    \"ClaimNumber\": \"\",\n    \"CoinsuranceAmount\": {{faker 'number.float'}},\n    \"DateReceived\": {{faker 'number.int' max=99999}},\n    \"AdditionalInfoDate\": {{faker 'number.int' max=99999}},\n    \"DaysUnits\": {{faker 'number.int' max=99999}},\n    \"DeductibleApplied\": {{faker 'number.float'}},\n    \"DetailSeq\": {{faker 'number.int' max=99999}},\n    \"DiagnosisCode\": \"\",\n    \"Discount\": {{faker 'number.float'}},\n    \"DiscountRemark\": \"\",\n    \"CalcedEligibleAmount\": {{faker 'number.float'}},\n    \"IneligibleAmount\": {{faker 'number.float'}},\n    \"IneligibleRemark\": \"\",\n    \"Interest\": {{faker 'number.float'}},\n    \"OtherInsuranceApproved\": {{faker 'number.float'}},\n    \"OtherInsuranceCoinsurance\": {{faker 'number.float'}},\n    \"OtherInsurancePaid\": {{faker 'number.float'}},\n    \"OverrideEligibleFlag\": \"\",\n    \"PatientNumber\": \"\",\n    \"PayeeCodeFlag\": \"\",\n    \"PaymentAmount\": {{faker 'number.float'}},\n    \"PaymentDate\": {{faker 'number.int' max=99999}},\n    \"PaymentInitiationDate\": {{faker 'number.int' max=99999}},\n    \"PlaceOfService\": \"\",\n    \"PolicyNumber\": \"\",\n    \"ProcedureCode\": \"\",\n    \"ProcedureModifier\": \"\",\n    \"ProcedureModifier2\": \"\",\n    \"StatusReason\": \"\",\n    \"RecordStatus\": \"\",\n    \"ToothNumber\": \"\",\n    \"TotalChargeAmount\": {{faker 'number.float'}},\n    \"TotalEligibleAmount\": {{faker 'number.float'}},\n    \"TotalExcludedDenied\": {{faker 'number.float'}},\n    \"TypeOfService\": \"\",\n    \"Withholding\": {{faker 'number.float'}},\n    \"PatientName\": \"\",\n    \"PayeeName\": \"\",\n    \"ProviderName\": \"\",\n    \"CompanyCode\": \"\",\n    \"NumberOfUnits\": {{faker 'number.float'}},\n    \"PatientDob\": {{faker 'number.int' max=99999}},\n    \"PatientSexCode\": \"\",\n    \"PatientSsn\": \"\",\n    \"ProviderSpecialty\": \"\",\n    \"DiagnosisDescription\": \"\",\n    \"BillType\": \"\",\n    \"DocumentNumber\": \"\",\n    \"BenefitCodeDescription\": \"\",\n    \"ProcedureName\": \"\",\n    \"ProviderNumber\": \"\",\n    \"OtherPayeeRela\": \"\",\n    \"PayeeType\": \"\",\n    \"NextPaymentDate\": {{faker 'number.int' max=99999}}\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "9636b38e-4037-48e6-81e2-40b00e3b5707",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "eb8342a1-2b83-4b31-ad7b-c2b0eeb1af82",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "f563af5f-0dc9-4481-93a1-73539952816d",
+        "type": "http",
+        "documentation": "GetClaimMessage.",
+        "method": "get",
+        "endpoint": "LPRestClaimAPI/v1/Claim/:GUID/:companyCode/:claimNumber/:detailSeq/:paymentSeq/:adjSeq/GetClaimMessage",
+        "responses": [
+          {
+            "uuid": "5a31dd38-9c98-429a-b59d-2163a61234d1",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"ClaimMessages\": [\n    {\n      \"CompanyCode\": \"\",\n      \"ClaimNumber\": \"\",\n      \"PolicyNumber\": \"\",\n      \"DetailSeq\": {{faker 'number.int' max=99999}},\n      \"AdjSeq\": {{faker 'number.int' max=99999}},\n      \"AttachedMessage\": [\n        \"\"\n      ],\n      \"AttachedMsg\": \"\",\n      \"DetailedErrorMsg\": \"\",\n      \"TrackingNumberMsg\": \"\",\n      \"CobMessage\": \"\",\n      \"ClaimNoteMessage\": \"\",\n      \"FollowUpMsg\": \"\",\n      \"EnsMessage\": \"\",\n      \"PolicyEnsMessage\": \"\",\n      \"WaiverMsg\": \"\",\n      \"ImageMsg\": \"\",\n      \"ReinsMsg\": \"\",\n      \"CondDateMsg\": \"\",\n      \"EobMsg\": \"\",\n      \"PreExistingMsg\": \"\",\n      \"CorrespondenceMsg\": \"\",\n      \"RestorationMsg\": \"\",\n      \"ClinicalReviewMsg\": \"\",\n      \"LtcWtdlRqueMsg\": \"\",\n      \"NfoMsg\": \"\",\n      \"OverAuthLimitMsg\": \"\",\n      \"LinkedPolicyMsg\": \"\",\n      \"SharedBenefitMsg\": \"\",\n      \"DetailExtLineId\": {{faker 'number.int' max=99999}},\n      \"PaymentSeq\": {{faker 'number.int' max=99999}}\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "1dca8e74-a79f-465d-916b-cb402b31e2c6",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "1d3b8405-0809-4701-82f2-9afe177b13e2",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "6ffbda20-90eb-435e-a745-955f5bf18e06",
+        "type": "http",
+        "documentation": "GetDeathClaimDetail",
+        "method": "post",
+        "endpoint": "LPRestClaimAPI/v1/Claim/:GUID/GetDeathClaimDetail",
+        "responses": [
+          {
+            "uuid": "8a072163-dc3a-411b-84fe-c8125e30bc2a",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"GetDeathClaimDetailResult\": {\n    \"CompanyCode\": \"\",\n    \"ClaimNumber\": \"\",\n    \"PolicyNumber\": \"\",\n    \"DetailSequence\": {{faker 'number.int' max=99999}},\n    \"AdjustmentSequence\": {{faker 'number.int' max=99999}},\n    \"BcType\": \"\",\n    \"RecordStatus\": \"\",\n    \"StatusReason\": \"\",\n    \"ClaimantSSN\": \"\",\n    \"ClaimantDOB\": {{faker 'number.int' max=99999}},\n    \"ClaimantSexCode\": \"\",\n    \"ClaimantName\": \"\",\n    \"PaymentText\": \"\",\n    \"ClaimantPaymentDate\": {{faker 'number.int' max=99999}},\n    \"DateReceivedReported\": {{faker 'number.int' max=99999}},\n    \"PaidText\": \"\",\n    \"PaidToDate\": {{faker 'number.int' max=99999}},\n    \"PaidUpType\": \"\",\n    \"DeathOfDeath\": {{faker 'number.int' max=99999}},\n    \"ProofOfLoss\": {{faker 'number.int' max=99999}},\n    \"Diagnosis1\": \"\",\n    \"Diagnosis2\": \"\",\n    \"Diagnosis3\": \"\",\n    \"Diagnosis4\": \"\",\n    \"BenefitCode\": \"\",\n    \"BenefitSequence\": {{faker 'number.int' max=99999}},\n    \"NumberOfUnits\": {{faker 'number.float'}},\n    \"BenefitCodeDescription\": \"\",\n    \"TotalDeathBenefit\": {{faker 'number.float'}},\n    \"TotalDBPaidToDate\": {{faker 'number.float'}},\n    \"TotalRemainingDeathBenefit\": {{faker 'number.float'}},\n    \"ControlFlag\": \"\",\n    \"CalcPercent\": {{faker 'number.float'}},\n    \"Gain\": {{faker 'number.float'}},\n    \"EligText\": \"\",\n    \"TotalEligibleAmount\": {{faker 'number.float'}},\n    \"AdbFaceAmount\": {{faker 'number.float'}},\n    \"Loan\": {{faker 'number.float'}},\n    \"PremiumRefund\": {{faker 'number.float'}},\n    \"Cash\": {{faker 'number.float'}},\n    \"Assignment\": {{faker 'number.float'}},\n    \"BenefitBalance\": {{faker 'number.float'}},\n    \"Interest\": {{faker 'number.float'}},\n    \"Withholding\": {{faker 'number.float'}},\n    \"Fee\": {{faker 'number.float'}},\n    \"PaymentAmount\": {{faker 'number.float'}},\n    \"PaymentDate\": {{faker 'number.int' max=99999}},\n    \"SuppressCheck\": \"\",\n    \"DistributionCode\": \"\",\n    \"DistributionCode2\": \"\",\n    \"ExcludedAmount\": {{faker 'number.float'}},\n    \"ExcludedRemark\": \"\",\n    \"PayeeFlag\": \"\",\n    \"PayeeInfoSSNTaxID\": \"\",\n    \"PayeeName\": \"\",\n    \"ThirdPartyFlag\": \"\",\n    \"ThirdPartyName\": \"\",\n    \"ThirdPartyAccountNumber\": \"\",\n    \"PayeeAddressLine1\": \"\",\n    \"PayeeAddressLine2\": \"\",\n    \"PayeeAddressLine3\": \"\",\n    \"PayeeCity\": \"\",\n    \"PayeeState\": \"\",\n    \"PayeeZip\": \"\",\n    \"PayeeResidenceStateText\": \"\",\n    \"PayeeResidenceState\": \"\",\n    \"ReportGain\": \"\"\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "50329ad7-a703-4ef9-8e77-a35f1cb68074",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "904aa512-2276-4cf8-ba2c-477c3c90563a",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "aed6fe52-1308-4ea7-9063-0b2f3dea3d30",
+        "type": "http",
+        "documentation": "GetDeathClaimHeaderDetails",
+        "method": "get",
+        "endpoint": "LPRestClaimAPI/v1/Claim/:GUID/:companyCode/:claimNumber/GetDeathClaimHeaderDetails",
+        "responses": [
+          {
+            "uuid": "345f28cf-2ef4-4949-b85a-2cae4b012e2a",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"GetDeathClaimHeaderDetailResult\": [\n    {\n      \"CompanyCode\": \"\",\n      \"ClaimNumber\": \"\",\n      \"Status\": \"\",\n      \"StatusReason\": \"\",\n      \"InsuredName\": \"\",\n      \"InsuredSSN\": \"\",\n      \"ClaimantName\": \"\",\n      \"ClaimantSSN\": \"\",\n      \"ClaimantDOB\": {{faker 'number.int' max=99999}},\n      \"ClaimantGender\": \"\",\n      \"ClaimOwner\": \"\",\n      \"ReportedDate\": {{faker 'number.int' max=99999}},\n      \"PaidToDate\": {{faker 'number.int' max=99999}},\n      \"IssueDate\": {{faker 'number.int' max=99999}},\n      \"TerminationDate\": {{faker 'number.int' max=99999}},\n      \"EffectiveIncurredDate\": {{faker 'number.int' max=99999}},\n      \"Relationship\": \"\",\n      \"BlockID\": \"\",\n      \"DateofDeath\": {{faker 'number.int' max=99999}},\n      \"ProofOfLoss\": {{faker 'number.int' max=99999}},\n      \"AccidentIndicator\": \"\",\n      \"PremiumRefundIndicator\": \"\",\n      \"Diagnosis1\": \"\",\n      \"Diagnosis2\": \"\",\n      \"Diagnosis3\": \"\",\n      \"Diagnosis4\": \"\",\n      \"Diagnosis1_Desc\": \"\",\n      \"Diagnosis2_Desc\": \"\",\n      \"Diagnosis3_Desc\": \"\",\n      \"Diagnosis4_Desc\": \"\",\n      \"BenefitSequence\": {{faker 'number.int' max=99999}},\n      \"BenefitAmount\": {{faker 'number.float'}},\n      \"TotalDeathBenefit\": {{faker 'number.float'}},\n      \"ExcludedBenefitAmount\": {{faker 'number.float'}},\n      \"ExcludedDeathBenefit\": {{faker 'number.float'}},\n      \"AllocatedDeathAmount\": {{faker 'number.float'}},\n      \"AllocatedToDateDeathBenefit\": {{faker 'number.float'}},\n      \"RemainingDeathAmount\": {{faker 'number.float'}},\n      \"TotalRemainingDeathBenefit\": {{faker 'number.float'}},\n      \"LastPaymentdate\": {{faker 'number.int' max=99999}},\n      \"LastPaymentAmount\": {{faker 'number.float'}}\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "3d7b1ebf-d071-465c-8d2c-5f7f90738eed",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "815b6bc7-070a-4fbc-9bc5-32f36f12a5f1",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "3426d39e-c1b9-483e-abe4-6f0ceb974fc6",
+        "type": "http",
+        "documentation": "UpdateDeathClaimHeader.",
+        "method": "put",
+        "endpoint": "LPRestClaimAPI/v1/Claim/:GUID/UpdateDeathClaimHeader",
+        "responses": [
+          {
+            "uuid": "429db895-fb40-4906-91a1-82392803e7aa",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"warnings\": [\n    {\n      \"WarningCode\": \"\",\n      \"WarningMessage\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "939f9eb5-154b-417c-8eab-db077cd99f8a",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "3b58a74e-80a3-42a4-b8e2-63d260ed0f56",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "9724bdf0-67db-4926-a07c-7029867a8640",
+        "type": "http",
+        "documentation": "InsertUpdateDeathClaimDetail.",
+        "method": "post",
+        "endpoint": "LPRestClaimAPI/v1/Claim/:GUID/InsertUpdateDeathClaimDetail",
+        "responses": [
+          {
+            "uuid": "c4352e39-1d91-4977-ac82-bc80b74fa7f0",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"warnings\": [\n    {\n      \"WarningCode\": \"\",\n      \"WarningMessage\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "24cb9e61-f1bc-4c84-aee9-572b5cc45770",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "c470583f-1ccb-4560-96a2-c8b406695fae",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "c3a3b950-31a5-48ac-859e-0d0383244c6f",
+        "type": "http",
+        "documentation": "SupplementalClaimInfo.",
+        "method": "get",
+        "endpoint": "LPRestClaimAPI/v1/SupplementalClaimInformation/:GUID/:companyCode/:policyNumber/:nameID/SupplementalClaimInfo",
+        "responses": [
+          {
+            "uuid": "8a594f3a-8c90-4d42-a192-ffe2697176bd",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"SupplementalClaimInfo\": [\n    {\n      \"Insured\": {\n        \"NameFormatCode\": \"\",\n        \"IndividualName\": {\n          \"Prefix\": \"\",\n          \"FirstName\": \"\",\n          \"MiddleName\": \"\",\n          \"LastName\": \"\",\n          \"Suffix\": \"\"\n        },\n        \"BusinessName\": {\n          \"Prefix\": \"\",\n          \"Name\": \"\",\n          \"Suffix\": \"\"\n        }\n      },\n      \"SSN\": \"\",\n      \"EffectiveDate\": {{faker 'number.int' max=99999}},\n      \"StatusCode\": \"\",\n      \"MedicareID\": \"\",\n      \"MedicareEligibilityDateA\": {{faker 'number.int' max=99999}},\n      \"MedicareEligibilityDateB\": {{faker 'number.int' max=99999}},\n      \"ExtractEligibility\": \"\",\n      \"OpenEnrollment\": \"\",\n      \"AutoProcess\": \"\",\n      \"AutoProcessMessage\": {{faker 'number.int' max=99999}},\n      \"PayeeAssignment\": \"\",\n      \"PrescriptionOption\": \"\",\n      \"PrescriptionDrugCarrierID\": \"\",\n      \"PrescriptionDrugGroupNumber\": \"\",\n      \"AddedDate\": {{faker 'number.int' max=99999}},\n      \"AddedTime\": {{faker 'number.int' max=99999}},\n      \"AddedCoderID\": \"\",\n      \"UpdatedDate\": {{faker 'number.int' max=99999}},\n      \"UpdatedTime\": {{faker 'number.int' max=99999}},\n      \"UpdatedCoderID\": \"\",\n      \"MedicareHicn\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "0dedb2af-2944-499c-9a2d-6e382bb6e57c",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "8ce9663f-68c2-4f21-87a3-f680aa54ce11",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "5fcb19cf-7633-40cb-8d85-303e747e5072",
+        "type": "http",
+        "documentation": "UpdateSupplementalClaimInfo.",
+        "method": "put",
+        "endpoint": "LPRestClaimAPI/v1/SupplementalClaimInformation/:GUID/UpdateSupplementalClaimInfo",
+        "responses": [
+          {
+            "uuid": "2371da23-e3c7-42c4-807f-a2df79400128",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"Warnings\": [\n    {\n      \"WarningCode\": \"\",\n      \"WarningMessage\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "c8ecd0c4-fc08-4155-9e21-562bd58857df",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "11281ce7-3d46-4514-a51b-9e4578228045",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "12c10084-7395-43ba-a3e1-76bff3f09f71",
+        "type": "http",
+        "documentation": "AddSupplementalClaimInfo.",
+        "method": "post",
+        "endpoint": "LPRestClaimAPI/v1/SupplementalClaimInformation/:GUID/AddSupplementalClaimInfo",
+        "responses": [
+          {
+            "uuid": "3fde5e07-ee6e-4550-ab40-a678b1a0f669",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"Warnings\": [\n    {\n      \"WarningCode\": \"\",\n      \"WarningMessage\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "2dcfc678-a80d-4c47-b02d-c85282bb2320",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "fa7e6e73-44a2-4990-a59a-e2916fa54a7b",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "b0f1293b-c873-4621-b5c2-5fb9e40b1b0c",
+        "type": "http",
+        "documentation": "DeleteSupplementalClaimInfo.",
+        "method": "delete",
+        "endpoint": "LPRestClaimAPI/v1/SupplementalClaimInformation/:GUID/:companyCode/:policyNumber/:effectiveDate/:insuredNameID/DeleteSupplementalClaimInfo",
+        "responses": [
+          {
+            "uuid": "ed8a6df6-c359-4cb1-9dbb-dd700d977264",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"Warnings\": [\n    {\n      \"WarningCode\": \"\",\n      \"WarningMessage\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "3fd47a99-01c4-47ea-8706-94ca1f4afacb",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "a81de29d-0839-47d0-ab98-e8dc15a819df",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "1bca5309-448b-4fd5-9f85-054e69856548",
+        "type": "http",
+        "documentation": "GetClaimList.",
+        "method": "get",
+        "endpoint": "LPRestClaimAPI/v2/Claim/:GUID/:companyCode/:policyNumber/GetClaimList",
+        "responses": [
+          {
+            "uuid": "00475f0c-3232-4a9d-ad5a-371bac719f48",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"Data\": {\n    \"ClaimList\": [\n      {\n        \"PolicyNumber\": \"\",\n        \"CompanyCode\": \"\",\n        \"Claimant\": \"\",\n        \"ClaimNumber\": \"\",\n        \"Status\": \"\",\n        \"Diagnosis\": \"\",\n        \"DiagnosisCode\": \"\",\n        \"Incurred\": \"\",\n        \"ProviderName\": \"\",\n        \"BlockId\": \"\",\n        \"Notes\": \"\",\n        \"Owner\": \"\",\n        \"DateReceived\": {{faker 'number.int' max=99999}},\n        \"PatientNameId\": {{faker 'number.int' max=99999}},\n        \"InsuredNameId\": {{faker 'number.int' max=99999}},\n        \"DateAdded\": {{faker 'number.int' max=99999}},\n        \"TimeAdded\": {{faker 'number.int' max=99999}},\n        \"CodrAdded\": \"\",\n        \"DateUpdated\": {{faker 'number.int' max=99999}},\n        \"TimeUpdated\": {{faker 'number.int' max=99999}},\n        \"CodrUpdated\": \"\",\n        \"StatusCode\": {{faker 'number.int' max=99999}},\n        \"ReasonCode\": \"\",\n        \"CoderOwner\": \"\",\n        \"ProductId\": \"\",\n        \"DateIncurred\": {{faker 'number.int' max=99999}},\n        \"BlockType\": \"\",\n        \"Relationship\": {{faker 'number.int' max=99999}},\n        \"EliminationFrom\": {{faker 'number.int' max=99999}},\n        \"EliminationThru\": {{faker 'number.int' max=99999}},\n        \"SenderId\": \"\",\n        \"SProviderNameId\": {{faker 'number.int' max=99999}},\n        \"SDiagnosisCode\": \"\",\n        \"WorkRelated\": \"\",\n        \"SPatientNumber\": \"\",\n        \"SAssignBens\": \"\",\n        \"SAccident\": \"\",\n        \"STotalCharges\": {{faker 'number.float'}},\n        \"SPayeeNameId\": {{faker 'number.int' max=99999}},\n        \"SCauseCode\": \"\",\n        \"SBillType\": \"\",\n        \"LastDayWorked\": {{faker 'number.int' max=99999}},\n        \"DateRtrnToWork\": {{faker 'number.int' max=99999}},\n        \"RProviderNameId\": {{faker 'number.int' max=99999}},\n        \"RDiagnosisCode\": \"\",\n        \"RProcedureCode\": \"\",\n        \"REstDur\": {{faker 'number.int' max=99999}},\n        \"REstDurFlag\": \"\",\n        \"REstAmt\": {{faker 'number.float'}},\n        \"RBenSelectSeq\": {{faker 'number.int' max=99999}},\n        \"REligibilityDate\": {{faker 'number.int' max=99999}},\n        \"LProviderNameId\": {{faker 'number.int' max=99999}},\n        \"LDiagnosisCode\": \"\",\n        \"LPhysicianNameid\": {{faker 'number.int' max=99999}},\n        \"LHospitalNameId\": {{faker 'number.int' max=99999}},\n        \"LProcedureCode\": \"\",\n        \"LEstDur\": {{faker 'number.int' max=99999}},\n        \"LEstDurFlag\": \"\",\n        \"LPayeeNameId\": {{faker 'number.int' max=99999}},\n        \"LEstAmt\": {{faker 'number.float'}},\n        \"MBillType\": \"\",\n        \"MDiagnosisCode\": \"\",\n        \"MAcceptsAssignmt\": \"\",\n        \"MAssignmentBens\": \"\",\n        \"MAccident\": \"\",\n        \"MWorkRelated\": \"\",\n        \"MPatientNumber\": \"\",\n        \"MIcnNumber\": \"\",\n        \"MTypeOfBill\": \"\",\n        \"MAdmitType\": \"\",\n        \"MProviderNameId\": {{faker 'number.int' max=99999}},\n        \"MTotalCharges\": {{faker 'number.float'}},\n        \"MPayeeNameId\": {{faker 'number.int' max=99999}},\n        \"MCauseCode\": \"\",\n        \"DFlag\": \"\",\n        \"DBenefitSeq\": {{faker 'number.int' max=99999}},\n        \"DDateOfDeath\": {{faker 'number.int' max=99999}},\n        \"DProofOfLoss\": {{faker 'number.int' max=99999}},\n        \"DAccident\": \"\",\n        \"DDiagnosisCode1\": \"\",\n        \"DDiagnosisCode2\": \"\",\n        \"DDiagnosisCode3\": \"\",\n        \"DDiagnosisCode4\": \"\",\n        \"DPremiumRefund\": \"\",\n        \"ProviderNumber\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "86a6a79b-4c1d-4039-bcb6-499bd585139d",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "6cc9904a-25cf-446e-8edc-544834d4ec82",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      }
+    ],
+    "rootChildren": [
+      {
+        "type": "route",
+        "uuid": "cb360049-326d-4ce4-b168-076b725b1d2b"
+      },
+      {
+        "type": "route",
+        "uuid": "a082891a-9744-4143-830f-d45c2583b9d3"
+      },
+      {
+        "type": "route",
+        "uuid": "df91ad53-ffec-4b29-bd1e-a64b8011b087"
+      },
+      {
+        "type": "route",
+        "uuid": "5fb2e542-288c-44eb-a42b-b3047ec2a3ae"
+      },
+      {
+        "type": "route",
+        "uuid": "865d6aab-f5ea-4691-9ec5-05a51f16e93c"
+      },
+      {
+        "type": "route",
+        "uuid": "f563af5f-0dc9-4481-93a1-73539952816d"
+      },
+      {
+        "type": "route",
+        "uuid": "6ffbda20-90eb-435e-a745-955f5bf18e06"
+      },
+      {
+        "type": "route",
+        "uuid": "aed6fe52-1308-4ea7-9063-0b2f3dea3d30"
+      },
+      {
+        "type": "route",
+        "uuid": "3426d39e-c1b9-483e-abe4-6f0ceb974fc6"
+      },
+      {
+        "type": "route",
+        "uuid": "9724bdf0-67db-4926-a07c-7029867a8640"
+      },
+      {
+        "type": "route",
+        "uuid": "c3a3b950-31a5-48ac-859e-0d0383244c6f"
+      },
+      {
+        "type": "route",
+        "uuid": "5fcb19cf-7633-40cb-8d85-303e747e5072"
+      },
+      {
+        "type": "route",
+        "uuid": "12c10084-7395-43ba-a3e1-76bff3f09f71"
+      },
+      {
+        "type": "route",
+        "uuid": "b0f1293b-c873-4621-b5c2-5fb9e40b1b0c"
+      },
+      {
+        "type": "route",
+        "uuid": "1bca5309-448b-4fd5-9f85-054e69856548"
+      }
+    ],
+    "proxyMode": false,
+    "proxyHost": "",
+    "proxyRemovePrefix": false,
+    "tlsOptions": {
+      "enabled": false,
+      "type": "CERT",
+      "pfxPath": "",
+      "certPath": "",
+      "keyPath": "",
+      "caPath": "",
+      "passphrase": ""
+    },
+    "cors": true,
+    "headers": [],
+    "proxyReqHeaders": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "proxyResHeaders": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "data": [],
+    "callbacks": []
+  }

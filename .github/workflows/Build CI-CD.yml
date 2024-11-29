@@ -1,0 +1,69 @@
+name: Build CI-CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  mssql:
+    runs-on: ubuntu-latest
+
+    services:
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        env:
+          ACCEPT_EULA: "Y"
+          SA_PASSWORD: "12345"
+        ports:
+          - 1433:1433
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Wait for SQL Server to Be Ready
+      run: |
+        for i in {1..10}; do
+          if /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "12345" -Q "SELECT 1" > /dev/null 2>&1; then
+            echo "SQL Server is ready!"
+            break
+          fi
+          echo "Waiting for SQL Server..."
+          sleep 5
+        done
+
+    - name: Install SQLCMD Tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y mssql-tools unixodbc-dev
+        echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+        source ~/.bashrc
+
+    - name: Execute SQL Scripts from Folder
+      run: |
+        for file in ./.GitHub-CI/Database/*.sql; do
+          echo "Executing $file..."
+          /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "YourStrong!Passw0rd" -i $file
+        done
+
+    # Step 5: Install Mockoon CLI
+    - name: Install Mockoon CLI
+      run: |
+        npm install -g @mockoon/cli
+    # Step 6: Start Mockoon Server Instances
+    - name: Start Mockoon Server
+      run: |
+        mockoon-cli start --data ./.GitHub-CI/Mockoon/EXL_LifePRO_LPRestClaimAPI.json --port 3000 --daemonize
+        mockoon-cli start --data ./.GitHub-CI/Mockoon/EXL_LifePRO_LPRestPartyAPI.json --port 3001 --daemonize
+        mockoon-cli start --data ./.GitHub-CI/Mockoon/EXL_LifePRO_LPRestPolicyAPI.json --port 3002 --daemonize
+        mockoon-cli start --data ./.GitHub-CI/Mockoon/EXL_LifePRO_LPRestProductAPI.json --port 3003 --daemonize
+
+    # Step 7: Verify Mockoon Server is Running
+    - name: Verify Mockoon Server
+      run: |
+        curl http://localhost:3000/LPRestClaim
+        curl http://localhost:3001/LPRestParty
+        curl http://localhost:3002/LPRestPolicy
+        curl http://localhost:3003/LPRestProduct
+

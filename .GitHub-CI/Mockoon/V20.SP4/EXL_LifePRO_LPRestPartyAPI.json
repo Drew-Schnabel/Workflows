@@ -1,0 +1,4354 @@
+{
+    "uuid": "09405219-4a75-4576-8e6e-69682f2fa51d",
+    "lastMigration": 33,
+    "name": "ExlLifePRO.RestPartyService - v20.sp4",
+    "endpointPrefix": "",
+    "latency": 0,
+    "port": 3001,
+    "hostname": "",
+    "folders": [],
+    "routes": [
+      {
+        "uuid": "5a44ed48-836e-4c87-a499-f3bd2af13f63",
+        "type": "http",
+        "documentation": "AddAddress.\r\nIR-5120 : We have made AddressLine2 and AddressLine3 Fields optional as per client requirement",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Address/AddAddress",
+        "responses": [
+          {
+            "uuid": "e2fa8e39-bcc1-41e6-9b4b-8960093c3af7",
+            "body": "{\n  \"AddAddressResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"Data\": {\n      \"CorrespondenceLetters\": [\n        {\n          \"CompanyCode\": \"\",\n          \"Letter\": \"\",\n          \"PolicyNumber\": \"\",\n          \"ProcessName\": \"\",\n          \"SetupType\": \"\",\n          \"Type\": \"\",\n          \"CorrespondenceCopy\": [\n            {\n              \"Copies\": {{faker 'number.int' max=99999}},\n              \"FileCopies\": {{faker 'number.int' max=99999}},\n              \"LetterNumber\": {{faker 'number.int' max=99999}},\n              \"RelationCode\": \"\"\n            }\n          ]\n        }\n      ],\n      \"Warnings\": [\n        {\n          \"WarningCode\": \"\",\n          \"WarningMessage\": \"\"\n        }\n      ]\n    }\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "f5b55d5e-dcce-4faa-b592-53b517b576fd",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "d1e9a730-a596-4fad-a6ba-e308af4dca8f",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "caf41094-352c-4a56-8abd-ce3ed5cce509",
+        "type": "http",
+        "documentation": "UpdateAddress.",
+        "method": "put",
+        "endpoint": "LPRestPartyAPI/v1/Address/UpdateAddress",
+        "responses": [
+          {
+            "uuid": "5b2f0c7f-3125-4622-9e2a-df9ed1f2a587",
+            "body": "{\n  \"UpdateAddressResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"Data\": {\n      \"CorrespondenceLetters\": [\n        {\n          \"CompanyCode\": \"\",\n          \"Letter\": \"\",\n          \"PolicyNumber\": \"\",\n          \"ProcessName\": \"\",\n          \"SetupType\": \"\",\n          \"Type\": \"\",\n          \"CorrespondenceCopy\": [\n            {\n              \"Copies\": {{faker 'number.int' max=99999}},\n              \"FileCopies\": {{faker 'number.int' max=99999}},\n              \"LetterNumber\": {{faker 'number.int' max=99999}},\n              \"RelationCode\": \"\"\n            }\n          ]\n        }\n      ],\n      \"Warnings\": [\n        {\n          \"WarningCode\": \"\",\n          \"WarningMessage\": \"\"\n        }\n      ]\n    }\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "1fffcfab-1517-4bc7-9d49-e89d0efff1f5",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "71803b2e-fc4d-437d-892b-8da202e63deb",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "79ce099b-df8f-4d89-93d0-6b8d5fc856b2",
+        "type": "http",
+        "documentation": "GetAddress.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Address/GetAddress",
+        "responses": [
+          {
+            "uuid": "ba577d61-c786-46c5-882d-39e5bf81e143",
+            "body": "{\n  \"GetAddressResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"Address\": [\n      {\n        \"NameID\": {{faker 'number.int' max=99999}},\n        \"Name\": \"\",\n        \"AddressUsageCompanyCode\": \"\",\n        \"AddressUsagePolicyNumber\": \"\",\n        \"PersonalEmailAdr\": \"\",\n        \"BusinessEmailAdr\": \"\",\n        \"AddressId\": {{faker 'number.int' max=99999}},\n        \"EffectiveDate\": {{faker 'number.int' max=99999}},\n        \"AddressCode\": \"\",\n        \"AdddressType\": \"\",\n        \"CancelDate\": {{faker 'number.int' max=99999}},\n        \"RecurringStateMo\": {{faker 'number.int' max=99999}},\n        \"RecurringStateDy\": {{faker 'number.int' max=99999}},\n        \"RecurringStopMo\": {{faker 'number.int' max=99999}},\n        \"RecurringStopDy\": {{faker 'number.int' max=99999}},\n        \"TeleNum\": \"\",\n        \"FaxNumber\": \"\",\n        \"CellNumber\": \"\",\n        \"BadAddressInd\": \"\",\n        \"WebId\": \"\",\n        \"AddLine1\": \"\",\n        \"AddLine2\": \"\",\n        \"AddLine3\": \"\",\n        \"City\": \"\",\n        \"State\": \"\",\n        \"Zip\": \"\",\n        \"BoxNumber\": \"\",\n        \"ZipExtension\": \"\",\n        \"Country\": \"\",\n        \"ResidentCounty\": \"\",\n        \"CountyCode\": \"\",\n        \"CityCode\": \"\",\n        \"PartyTypeCode\": \"\",\n        \"CompanyCode\": \"\",\n        \"PolicyNumber\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "c62548d2-7b80-491c-a1af-04732e8701c2",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "8fdb88ba-fe62-4b74-ac2c-2f55373c5a9a",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "6d62c58a-96ac-41f1-9496-46d0901d06d0",
+        "type": "http",
+        "documentation": "GetAddressByNameID.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Address/GetAddressByNameID",
+        "responses": [
+          {
+            "uuid": "9b5d4cc4-dd06-444c-8a96-c2847462113b",
+            "body": "{\n  \"GetAddressByNameIDResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"Address\": [\n      {\n        \"NameID\": {{faker 'number.int' max=99999}},\n        \"Name\": \"\",\n        \"AddressUsageCompanyCode\": \"\",\n        \"AddressUsagePolicyNumber\": \"\",\n        \"PersonalEmailAdr\": \"\",\n        \"BusinessEmailAdr\": \"\",\n        \"AddressId\": {{faker 'number.int' max=99999}},\n        \"EffectiveDate\": {{faker 'number.int' max=99999}},\n        \"AddressCode\": \"\",\n        \"AdddressType\": \"\",\n        \"CancelDate\": {{faker 'number.int' max=99999}},\n        \"RecurringStateMo\": {{faker 'number.int' max=99999}},\n        \"RecurringStateDy\": {{faker 'number.int' max=99999}},\n        \"RecurringStopMo\": {{faker 'number.int' max=99999}},\n        \"RecurringStopDy\": {{faker 'number.int' max=99999}},\n        \"TeleNum\": \"\",\n        \"FaxNumber\": \"\",\n        \"CellNumber\": \"\",\n        \"BadAddressInd\": \"\",\n        \"WebId\": \"\",\n        \"AddLine1\": \"\",\n        \"AddLine2\": \"\",\n        \"AddLine3\": \"\",\n        \"City\": \"\",\n        \"State\": \"\",\n        \"Zip\": \"\",\n        \"BoxNumber\": \"\",\n        \"ZipExtension\": \"\",\n        \"Country\": \"\",\n        \"ResidentCounty\": \"\",\n        \"CountyCode\": \"\",\n        \"CityCode\": \"\",\n        \"PartyTypeCode\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "7aaac01f-3da7-4825-b5c8-e0bd4b4c49dc",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "25fc758c-ab51-45e9-9838-4a7bc6377d14",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "ea3b0a9e-1cce-4866-9891-7744f29eaa90",
+        "type": "http",
+        "documentation": "GetAddressLink.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Address/GetAddressLink",
+        "responses": [
+          {
+            "uuid": "0ccc2b63-d3a6-4624-b003-b78fa85cba71",
+            "body": "{\n  \"GetAddressLinkResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"AddrOtherNamesCount\": {{faker 'number.int' max=99999}},\n    \"AddrlinkRes\": [\n      {\n        \"CompanyCode\": \"\",\n        \"PolicyNumber\": \"\",\n        \"CancelDate\": {{faker 'number.int' max=99999}},\n        \"EffectiveDate\": {{faker 'number.int' max=99999}},\n        \"WebID\": \"\",\n        \"Address\": {\n          \"AddressCode\": \"\",\n          \"AddressID\": {{faker 'number.int' max=99999}},\n          \"AddressType\": \"\",\n          \"BadAddressIndicator\": \"\"\n        },\n        \"NameIDData\": {\n          \"AlternateNameID\": {{faker 'number.int' max=99999}},\n          \"OtherNameID\": {{faker 'number.int' max=99999}}\n        },\n        \"ContactNumber\": {\n          \"CellNumber\": \"\",\n          \"FaxNumber\": \"\",\n          \"PhoneNumber\": \"\"\n        },\n        \"RecurringDates\": {\n          \"RecurringStartDay\": {{faker 'number.int' max=99999}},\n          \"RecurringStartMonth\": {{faker 'number.int' max=99999}},\n          \"RecurringStopDay\": {{faker 'number.int' max=99999}},\n          \"RecurringStopMonth\": {{faker 'number.int' max=99999}}\n        },\n        \"NameDetails\": {\n          \"BusinessName\": \"\",\n          \"BusinessPrefix\": \"\",\n          \"BusinessSuffix\": \"\",\n          \"IndividualFirstName\": \"\",\n          \"IndividualMiddleName\": \"\",\n          \"IndividualLastName\": \"\",\n          \"IndividualPrefix\": \"\",\n          \"IndividualSuffix\": \"\"\n        }\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "859d5a6c-d79c-4dcb-b124-40a8322078af",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "0e3376f7-a82a-4eab-9228-c16a2a3c75d1",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "5ec67d7c-e6ab-422a-816e-bbc6472cfce4",
+        "type": "http",
+        "documentation": "GetPrimaryAddress.",
+        "method": "get",
+        "endpoint": "LPRestPartyAPI/v1/Address/:PartyId/:GUID/GetPrimaryAddress",
+        "responses": [
+          {
+            "uuid": "02383494-a130-477f-be4a-87243e25934d",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"NameId\": {{faker 'number.int' max=99999}},\n  \"AddressLine1\": \"\",\n  \"AddressLine2\": \"\",\n  \"AddressLine3\": \"\",\n  \"AddressCode\": \"\",\n  \"AddressId\": {{faker 'number.int' max=99999}},\n  \"AddressType\": \"\",\n  \"AlternateNameId\": {{faker 'number.int' max=99999}},\n  \"AlternateName\": \"\",\n  \"BadAddressIndicator\": \"\",\n  \"BoxNumber\": \"\",\n  \"BusinessEmail\": \"\",\n  \"CancelDate\": {{faker 'number.int' max=99999}},\n  \"CellNumber\": \"\",\n  \"City\": \"\",\n  \"CityCode\": \"\",\n  \"CompanyCode\": \"\",\n  \"Country\": \"\",\n  \"CountyCode\": \"\",\n  \"EffectiveDate\": {{faker 'number.int' max=99999}},\n  \"FaxNumber\": \"\",\n  \"PartyTypeCode\": \"\",\n  \"PolicyNumber\": \"\",\n  \"Name\": \"\",\n  \"PersonalEmail\": \"\",\n  \"RecurringStartDay\": \"\",\n  \"RecurringStartMonth\": \"\",\n  \"RecurringStopDay\": \"\",\n  \"RecurringStopMonth\": \"\",\n  \"ResidentCounty\": \"\",\n  \"State\": \"\",\n  \"TelephoneNumber\": \"\",\n  \"WebId\": \"\",\n  \"Zip\": \"\",\n  \"ZipExtension\": \"\"\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "0a3b5b46-0a3f-493c-ab8f-293a64520721",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "83a3e536-1cc7-4380-8045-8c2fbeb1882d",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "e55b99a2-f32f-4989-a874-a773957c0226",
+        "type": "http",
+        "documentation": "Validate Address",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Address/:GUID/ValidateAddress",
+        "responses": [
+          {
+            "uuid": "f04b820b-e3f9-46a5-9fba-deed3c968354",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"Address\": {\n    \"Address1\": \"\",\n    \"Address2\": \"\",\n    \"City\": \"\",\n    \"State\": \"\",\n    \"Zip5\": \"\",\n    \"Zip4\": \"\"\n  },\n  \"WarningMessage\": \"\",\n  \"ErrorMessage\": \"\"\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "7555274b-c71d-4bf3-977e-b8a01d4ecef6",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "254263f2-e4af-4293-88ef-3890a42fc249",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "25ef9831-39e7-45ea-881d-578209e01e4a",
+        "type": "http",
+        "documentation": "GetEFT.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/EFT/GetEFT",
+        "responses": [
+          {
+            "uuid": "d991a5c6-214c-4113-94a1-00bbd580e17c",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"GetEFTResult\": [\n    {\n      \"AccountType\": {{faker 'number.int' max=99999}},\n      \"BankAccount\": \"\",\n      \"BankElectronicRoutingNumber\": \"\",\n      \"BankName\": \"\",\n      \"BankNameID\": {{faker 'number.int' max=99999}},\n      \"CompanyCode\": \"\",\n      \"EndDate\": {{faker 'number.int' max=99999}},\n      \"LastPrenoteDate\": {{faker 'number.int' max=99999}},\n      \"NextPrenoteDate\": {{faker 'number.int' max=99999}},\n      \"PolicyNumber\": \"\",\n      \"PrenoteLagDays\": {{faker 'number.int' max=99999}},\n      \"PrenoteStatus\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "7ef7e420-74e5-482f-a614-b6432db24974",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "54750537-bba1-45e9-9b44-ceb55816a43e",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "aefc13d5-a923-4207-848c-b3c10c26ee94",
+        "type": "http",
+        "documentation": "InsertEFT.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/EFT/InsertEFT",
+        "responses": [
+          {
+            "uuid": "c67ea3d1-1c70-4479-bcaa-dcab1f0a71cf",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"InsertEFTResult\": [\n    {\n      \"BankNameID\": {{faker 'number.int' max=99999}},\n      \"BankElectronicRoutingNumber\": \"\",\n      \"NextPrenoteDate\": {{faker 'number.int' max=99999}},\n      \"PrenoteLagDays\": {{faker 'number.int' max=99999}}\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "4369e752-dc69-4181-971e-454185f55694",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "1e120e50-4569-41e4-97be-bd7f5e6427e0",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "14308e55-1c82-4562-81e3-a8b63083c589",
+        "type": "http",
+        "documentation": "UpdateEFT.",
+        "method": "put",
+        "endpoint": "LPRestPartyAPI/v1/EFT/UpdateEFT",
+        "responses": [
+          {
+            "uuid": "43494da1-3e60-4dda-bcad-e868ab3fa174",
+            "body": "{\n  \"UpdateEFTResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\"\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "1456e61b-fbe7-44fd-b00f-96ac98625b17",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "100fa44d-8cb1-4afe-a857-9a7101b2effa",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "890bc2ac-cfef-41e3-8560-51df56693da9",
+        "type": "http",
+        "documentation": "DeleteEFT.",
+        "method": "delete",
+        "endpoint": "LPRestPartyAPI/v1/EFT/DeleteEFT",
+        "responses": [
+          {
+            "uuid": "48c66362-33a6-4ad6-99c8-8b894c1f6886",
+            "body": "{\n  \"DeleteEFTResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\"\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "6ab3a99c-40ac-44db-8fe0-f5694d856642",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "6f1cfaf7-946a-416d-99be-ccbdf113812d",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "fb4b1830-5594-4a5e-9292-1e25df618968",
+        "type": "http",
+        "documentation": "GetDirectDepositHistory.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/History/GetDirectDepositHistory",
+        "responses": [
+          {
+            "uuid": "fbc8c703-642c-4992-895e-2fb12066773c",
+            "body": "{\n  \"GetDirectDepositHistoryResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"GetDirectDepositHistory\": [\n      {\n        \"NextPrenoteDate\": \"\",\n        \"NameID\": \"\",\n        \"CompanyCode\": \"\",\n        \"PolicyNumber\": \"\",\n        \"EndDate\": \"\",\n        \"TranCode\": \"\",\n        \"BankNameID\": \"\",\n        \"PayeeBankAccount\": \"\",\n        \"LastPrenoteDate\": \"\",\n        \"PrenoteLagDays\": \"\",\n        \"DateAdded\": \"\",\n        \"TimeAdded\": \"\",\n        \"CoderAdded\": \"\",\n        \"DateUpdated\": \"\",\n        \"TimeUpdated\": \"\",\n        \"CoderUpdated\": \"\",\n        \"RecordFunction\": \"\",\n        \"DDPHUpdCount\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "c2d347b2-7c12-4f48-b7a8-93780aaccbfe",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "0b8be348-5768-42ae-8d4c-6f19bae91818",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "1d1da33a-b7d6-4fa5-886b-f28c320b1be6",
+        "type": "http",
+        "documentation": "GetAddressHistory.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/History/GetAddressHistory",
+        "responses": [
+          {
+            "uuid": "69d5be17-62fc-4d6f-9f33-0d4f2f1734d4",
+            "body": "{\n  \"GetAddressHistoryResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"GetAddressHistoryResp\": [\n      {\n        \"Address_ID\": \"\",\n        \"Addr_Line_1\": \"\",\n        \"Addr_Line_2\": \"\",\n        \"Addr_Line_3\": \"\",\n        \"City\": \"\",\n        \"State\": \"\",\n        \"Zip\": \"\",\n        \"Box_Number\": \"\",\n        \"Zip_Extension\": \"\",\n        \"Country\": \"\",\n        \"Resident_County\": \"\",\n        \"County_Code\": \"\",\n        \"City_Code\": \"\",\n        \"Date_Stamp\": \"\",\n        \"Time_Stamp\": \"\",\n        \"Coder_ID\": \"\",\n        \"AHST_UPD_COUNT\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "fb0c9954-63f8-4f8e-9326-3e96dae86650",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "86a4318f-3253-40b8-90d2-62d28c4e0f06",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "ecaedaa6-c175-4d45-a8bb-b29c2523a383",
+        "type": "http",
+        "documentation": "UpdateMilitaryInfo.",
+        "method": "put",
+        "endpoint": "LPRestPartyAPI/v1/Military/:GUID/UpdateMilitaryInfo",
+        "responses": [
+          {
+            "uuid": "852cf38c-3031-45d2-b98f-5e4a3f76eafd",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\"\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "19d8293a-45d8-4315-ad18-e0f28d1b279b",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "e22cc439-546d-47e4-a7fd-cbab11d8c138",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "677fe86a-2f75-43ce-8773-0cf2f091f070",
+        "type": "http",
+        "documentation": "AddMilitaryInfo.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Military/:GUID/AddMilitaryInfo",
+        "responses": [
+          {
+            "uuid": "c6e40efc-eab7-4be0-bb94-5dacab473acc",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\"\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "835e3578-c57c-4c5e-8b1e-cf9ec30b5852",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "b41f3b59-d5fc-4643-9338-4b0402695205",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "3ee7df9b-cfec-4523-b5d2-27fdc76dee7c",
+        "type": "http",
+        "documentation": "DeleteMilitaryInfo.",
+        "method": "delete",
+        "endpoint": "LPRestPartyAPI/v1/Military/:GUID/:nameId/DeleteMilitaryInfo",
+        "responses": [
+          {
+            "uuid": "77a1c333-c45a-4b51-ad15-3988d8a4655a",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\"\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "40f65ac9-a681-4132-8e4b-a614ad98c336",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "aa45f580-6069-4d7d-b82a-56f1c57748f7",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "8aab8150-dce5-4348-b6ef-ec2f6cc92908",
+        "type": "http",
+        "documentation": "GetMilitaryInfo.",
+        "method": "get",
+        "endpoint": "LPRestPartyAPI/v1/Military/:GUID/:nameId/GetMilitaryInfo",
+        "responses": [
+          {
+            "uuid": "8b3053a1-a252-4c23-a28e-3dc4b161111d",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"GetMilitaryInfo\": {\n    \"NameId\": {{faker 'number.int' max=99999}},\n    \"ServiceInfo\": \"\",\n    \"Component\": \"\",\n    \"DutyStatus\": \"\",\n    \"RankRate\": \"\",\n    \"PayGrade\": \"\",\n    \"CivilianSaluation\": \"\",\n    \"CivilSaluationOr\": \"\",\n    \"OccupSpecialty\": \"\",\n    \"ProjRetPayGrade\": \"\",\n    \"ProjRetDate\": {{faker 'number.int' max=99999}},\n    \"PromotionDate\": {{faker 'number.int' max=99999}},\n    \"PayEntryBasDate\": {{faker 'number.int' max=99999}},\n    \"ActDutyBasDate\": {{faker 'number.int' max=99999}},\n    \"Date1405\": {{faker 'number.int' max=99999}},\n    \"SbpElectionOpt\": \"\",\n    \"SbpCost\": {{faker 'number.float'}},\n    \"SbpPct\": {{faker 'number.int' max=99999}},\n    \"SbpOffsetPia\": \"\",\n    \"SbpAmount\": {{faker 'number.float'}}\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "b8dc63e7-8199-4c4d-94cd-cc709cc15f7c",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "e607b56c-7c75-4bb0-96e6-8dfbfbc06d38",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "cc62c818-202d-48e8-9266-761d2864464d",
+        "type": "http",
+        "documentation": "GetPartyNote",
+        "method": "get",
+        "endpoint": "LPRestPartyAPI/v1/Note/:GUID/:nameID/GetPartyNotes",
+        "responses": [
+          {
+            "uuid": "f4a469a3-0dca-4e81-91f6-cf0dc8d468ee",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"PartyNotesData\": [\n    {\n      \"NameID\": {{faker 'number.int' max=99999}},\n      \"DateTimeAdded\": \"\",\n      \"CoderIdAdded\": \"\",\n      \"DateTimeUpdated\": \"\",\n      \"CoderIdUpdated\": \"\",\n      \"NoteData\": \"\",\n      \"Description\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "bc546d74-641c-466a-9ccf-b144f66de6ee",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "997b4a60-d853-433a-8799-9f7c24dd52dd",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "228cf3a7-d430-4b11-b143-c6f93f6f47a1",
+        "type": "http",
+        "documentation": "AddPartyNotes",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Note/:GUID/AddPartyNotes",
+        "responses": [
+          {
+            "uuid": "8e2f4229-ef25-4ed5-ac1d-131c387095c9",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\"\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "a3c3de6a-051d-450c-ae03-e4aa52d4c05e",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "1ccb39d1-df26-4a70-ab30-061f777ddb27",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "7dba6622-bf81-4673-a00a-cf0b48d70f6c",
+        "type": "http",
+        "documentation": "UpdatePartyNotes",
+        "method": "put",
+        "endpoint": "LPRestPartyAPI/v1/Note/:GUID/UpdatePartyNotes",
+        "responses": [
+          {
+            "uuid": "0a22c118-baea-4b5d-b391-f256be634487",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\"\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "9ef3c743-00ef-4bb3-8ffb-4f0f561e6893",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "4669179b-6874-4521-87e3-11dd207dc47c",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "d0e6d5db-2642-4660-93b1-0f965ab2930f",
+        "type": "http",
+        "documentation": "DeletePartyNotes",
+        "method": "delete",
+        "endpoint": "LPRestPartyAPI/v1/Note/:GUID/:coderIDAdded/:dateTimeAdded/:nameID/DeletePartyNotes",
+        "responses": [
+          {
+            "uuid": "0ad587af-c321-4fa6-96b9-71a8867c42c8",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\"\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "40124b6e-a577-49a1-bdaf-6fe9469112f0",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "e7d99f8f-b07a-4798-b8fe-4927ad6c2b4b",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "900979cc-c329-4a4c-986e-ce32a7155ef1",
+        "type": "http",
+        "documentation": "GetGRPTByNameID.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Party/GetGRPTByNameID",
+        "responses": [
+          {
+            "uuid": "2980dc95-7ada-478e-a91f-ae9bad99dd6b",
+            "body": "{\n  \"GetGRPTByNameIDResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"GroupNumber\": \"\"\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "62d83b0e-2af0-4dde-9756-ec180da455db",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "4582164b-128d-4ff7-ae5b-66964f80f909",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "8f0fce4c-3d1f-4ad4-abd6-9d7c4cf00414",
+        "type": "http",
+        "documentation": "AddParty.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Party/AddParty",
+        "responses": [
+          {
+            "uuid": "569c4676-062a-4425-a36f-2b62c51eccad",
+            "body": "{\n  \"AddPartyResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"NameID\": {{faker 'number.int' max=99999}},\n    \"CorrespondenceLetters\": [\n      {\n        \"CompanyCode\": \"\",\n        \"Letter\": \"\",\n        \"PolicyNumber\": \"\",\n        \"ProcessName\": \"\",\n        \"SetupType\": \"\",\n        \"Type\": \"\",\n        \"CorrespondenceCopy\": [\n          {\n            \"Copies\": {{faker 'number.int' max=99999}},\n            \"FileCopies\": {{faker 'number.int' max=99999}},\n            \"LetterNumber\": {{faker 'number.int' max=99999}},\n            \"RelationCode\": \"\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 201,
+            "label": "Created",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "a6bed444-8153-4ddd-86fa-6f974e530d9e",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "d9f0ff82-2ada-4b96-82bc-53ca46e1a355",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "6847a856-ba0e-498e-85cb-cb6779988199",
+        "type": "http",
+        "documentation": "UpdateParty.",
+        "method": "put",
+        "endpoint": "LPRestPartyAPI/v1/Party/UpdateParty",
+        "responses": [
+          {
+            "uuid": "e5474c01-cec9-42a7-95a9-6b7aa536fe40",
+            "body": "{\n  \"UpdatePartyResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"NameID\": {{faker 'number.int' max=99999}},\n    \"CorrespondenceLetters\": [\n      {\n        \"CompanyCode\": \"\",\n        \"Letter\": \"\",\n        \"PolicyNumber\": \"\",\n        \"ProcessName\": \"\",\n        \"SetupType\": \"\",\n        \"Type\": \"\",\n        \"CorrespondenceCopy\": [\n          {\n            \"Copies\": {{faker 'number.int' max=99999}},\n            \"FileCopies\": {{faker 'number.int' max=99999}},\n            \"LetterNumber\": {{faker 'number.int' max=99999}},\n            \"RelationCode\": \"\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 201,
+            "label": "Created",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "8bafd807-8559-4f6a-9ab5-8a6dd3bf4cc2",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "98a048f6-91fa-406e-93df-9370e63273cd",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "64c27327-c431-4115-bbef-3310e15e6573",
+        "type": "http",
+        "documentation": "DeleteParty.",
+        "method": "delete",
+        "endpoint": "LPRestPartyAPI/v1/Party/DeleteParty",
+        "responses": [
+          {
+            "uuid": "c28b5771-19da-4f54-b7c4-3c879aabee0f",
+            "body": "{\n  \"DeletePartyResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"NameID\": {{faker 'number.int' max=99999}}\n  }\n}",
+            "latency": 0,
+            "statusCode": 201,
+            "label": "Created",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "fe87de28-4a0d-4ffd-a24d-04035604698c",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "fb9c0bfa-6d9e-42cd-a7eb-35837e0cf51d",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "6140b81d-a008-44f9-aabc-a58691f0635b",
+        "type": "http",
+        "documentation": "PartyDetails.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Party/PartyDetails",
+        "responses": [
+          {
+            "uuid": "35956485-ed7b-45c7-b726-665efcd91d86",
+            "body": "{\n  \"PartyDetailsResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"getPartyDetailsRes\": [\n      {\n        \"Name_Format_Code\": \"\",\n        \"Individual_Prefix\": \"\",\n        \"Individual_Last\": \"\",\n        \"Individual_First\": \"\",\n        \"Individual_Middle\": \"\",\n        \"Individual_Suffix\": \"\",\n        \"Business_Prefix\": \"\",\n        \"Name_Business\": \"\",\n        \"Business_Suffix\": \"\",\n        \"SSN\": \"\",\n        \"TaxID\": \"\",\n        \"Date_Of_Birth\": \"\",\n        \"Sex_Code\": \"\",\n        \"Deceased_Flag\": \"\",\n        \"Tax_Status\": \"\",\n        \"Tax_Wthdg_Flag\": \"\",\n        \"Tax_Cert_Date\": \"\",\n        \"Tax_Cert_Code\": \"\",\n        \"Elec_Aba_Number\": \"\",\n        \"Paper_Aba_Num\": \"\",\n        \"Hong_Kong_ID\": \"\",\n        \"Death_Date\": \"\",\n        \"Contact_Client_Flg\": \"\",\n        \"National_Provdr_ID\": \"\",\n        \"Foreign_Tax_ID\": \"\",\n        \"Personal_Email_Adr\": \"\",\n        \"Business_Email_Adr\": \"\",\n        \"Effective_Date\": \"\",\n        \"Address_Code\": \"\",\n        \"Company_Code\": \"\",\n        \"Policy_Number\": \"\",\n        \"Address_ID\": \"\",\n        \"Cancel_Date\": \"\",\n        \"Recurring_Start_mo\": \"\",\n        \"Recurring_Start_dy\": \"\",\n        \"Recurring_Stop_mo\": \"\",\n        \"Recurring_Stop_dy\": \"\",\n        \"Alternate_Name_ID\": \"\",\n        \"Tele_Num\": \"\",\n        \"Fax_Num\": \"\",\n        \"Address_Type\": \"\",\n        \"Bad_Address_Ind\": \"\",\n        \"Cell_Number\": \"\",\n        \"Web_ID\": \"\",\n        \"Addr_Line_1\": \"\",\n        \"Addr_Line_2\": \"\",\n        \"Addr_Line_3\": \"\",\n        \"City\": \"\",\n        \"State\": \"\",\n        \"Zip\": \"\",\n        \"Box_Number\": \"\",\n        \"Zip_Extension\": \"\",\n        \"Country\": \"\",\n        \"Resident_County\": \"\",\n        \"County_Code\": \"\",\n        \"City_Code\": \"\",\n        \"Eft_Record_Exists\": \"\",\n        \"Military_Record_Exists\": \"\",\n        \"Address_Count\": \"\",\n        \"Linked_Addresses\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "ff49c2e2-5dc1-4c23-9285-aacd75bd940e",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "f3c6a65b-5d44-4252-bb96-d98402c0dfa3",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "d36c1445-e53e-4618-a0e3-248d06bc336e",
+        "type": "http",
+        "documentation": "PartySearch.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Party/PartySearch",
+        "responses": [
+          {
+            "uuid": "a46bfb02-cdc1-4598-b34d-76b65ad986f5",
+            "body": "{\n  \"PartySearchResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"PartySearchRes\": [\n      {\n        \"NameId\": \"\",\n        \"NameFormatCode\": \"\",\n        \"Ssn\": \"\",\n        \"IndividualPrefix\": \"\",\n        \"IndividualFirst\": \"\",\n        \"IndividualMiddle\": \"\",\n        \"IndividualLast\": \"\",\n        \"IndividualSuffix\": \"\",\n        \"NameBusiness\": \"\",\n        \"BusinessPrefix\": \"\",\n        \"BusinessSuffix\": \"\",\n        \"DateOfBirth\": \"\",\n        \"SexCode\": \"\",\n        \"AddressId\": \"\",\n        \"Line1\": \"\",\n        \"Line2\": \"\",\n        \"Line3\": \"\",\n        \"City\": \"\",\n        \"State\": \"\",\n        \"ZipCode\": \"\",\n        \"TeleNum\": \"\",\n        \"CellNumber\": \"\",\n        \"AgentRecordExits\": \"\",\n        \"ProviderRecordExits\": \"\",\n        \"DeceasedFlag\": \"\",\n        \"PersonalEmailAddress\": \"\",\n        \"BusinessEmailAddress\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "54f631ae-6e9c-4661-aa85-49419107d8e1",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "1d59f144-c93f-4a9c-8f75-32670bab8327",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "343215d9-4d5d-4b08-8214-c9a06033ed51",
+        "type": "http",
+        "documentation": "GetPartyRelationships.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Party/GetPartyRelationships",
+        "responses": [
+          {
+            "uuid": "bf8a7fe5-2e2e-4d0d-93bc-71a81d59191e",
+            "body": "{\n  \"GetPartyRelationshipsResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"PartyRelationshipsResp\": [\n      {\n        \"NameID\": {{faker 'number.int' max=99999}},\n        \"RelateCode\": \"\",\n        \"IdentifyingAlpha\": \"\",\n        \"BenefitSeqNumber\": {{faker 'number.int' max=99999}},\n        \"ContactCaseNum\": \"\",\n        \"ContactPayorId\": {{faker 'number.int' max=99999}},\n        \"SubTypeCode\": \"\",\n        \"PctOfInterest\": {{faker 'number.float'}},\n        \"AMTOfInterest\": {{faker 'number.float'}},\n        \"CompanyCode\": \"\",\n        \"PolicyNumber\": \"\",\n        \"ContractCode\": \"\",\n        \"ContractDate\": {{faker 'number.int' max=99999}},\n        \"LineOfBusiness\": \"\",\n        \"ProductCode\": \"\",\n        \"TaxQualifyCode\": \"\",\n        \"IssueState\": \"\",\n        \"IssueDate\": {{faker 'number.int' max=99999}},\n        \"BillingCode\": \"\",\n        \"BillingForm\": \"\",\n        \"BillingMode\": \"\",\n        \"ModePremium\": {{faker 'number.float'}},\n        \"PaidToDate\": {{faker 'number.int' max=99999}},\n        \"FaceAmount\": {{faker 'number.float'}},\n        \"PolicySpecialMode\": \"\",\n        \"AgentName\": \"\",\n        \"ActualBillDate\": {{faker 'number.int' max=99999}},\n        \"ProductDescription\": \"\",\n        \"AmountDue\": {{faker 'number.float'}},\n        \"ContractReason\": \"\",\n        \"IssueAge\": \"\",\n        \"SexCode\": \"\",\n        \"Insured\": \"\",\n        \"PolicyOwner\": \"\",\n        \"BillingDate\": {{faker 'number.int' max=99999}},\n        \"DueDate\": {{faker 'number.int' max=99999}},\n        \"BillingReason\": \"\",\n        \"PaidUpType\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 201,
+            "label": "Created",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "dcf0fa63-9c73-435f-9558-743c91bbb01c",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "4997a089-0425-4d4a-bd2e-e33b3ebf344d",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "2225eb1b-5350-49b8-ad89-6d72df07e826",
+        "type": "http",
+        "documentation": "GetPartyHistory.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Party/GetPartyHistory",
+        "responses": [
+          {
+            "uuid": "1802d234-9397-43df-b370-285f6fbe1982",
+            "body": "{\n  \"GetPartyHistoryResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"getPartyHistoryRes\": [\n      {\n        \"Name_Format_Code\": \"\",\n        \"Individual_Prefix\": \"\",\n        \"Individual_Last\": \"\",\n        \"Individual_First\": \"\",\n        \"Individual_Middle\": \"\",\n        \"Individual_Suffix\": \"\",\n        \"Business_Prefix\": \"\",\n        \"Name_Business\": \"\",\n        \"Business_Suffix\": \"\",\n        \"SSN\": \"\",\n        \"Date_Of_Birth\": \"\",\n        \"Sex_Code\": \"\",\n        \"Deceased_Flag\": \"\",\n        \"Tax_Status\": \"\",\n        \"Tax_Wthdg_Flag\": \"\",\n        \"Tax_Cert_Date\": \"\",\n        \"Tax_Cert_Code\": \"\",\n        \"Elec_Aba_Number\": \"\",\n        \"Paper_Aba_Num\": \"\",\n        \"Hong_Kong_ID\": \"\",\n        \"Death_Date\": \"\",\n        \"Contact_Client_Flg\": \"\",\n        \"National_Provdr_ID\": \"\",\n        \"Foreign_Tax_ID\": \"\",\n        \"Personal_Email_Adr\": \"\",\n        \"Business_Email_Adr\": \"\",\n        \"Date_Stamp\": \"\",\n        \"Time_Stamp\": \"\",\n        \"Coder_ID\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 201,
+            "label": "Created",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "78f26460-eb39-47f6-9a9b-8434c230928c",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "afac639e-8a54-40e0-b7b0-9201c5ce2037",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "2a420e5c-ea92-49ff-9668-2b4ae5859fe6",
+        "type": "http",
+        "documentation": "GetNameParameters.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Party/GetNameParameters",
+        "responses": [
+          {
+            "uuid": "149b3eaa-2079-406c-9f2c-5a54561524e0",
+            "body": "{\n  \"GetNameParametersResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"GetNameParameters\": [\n      {\n        \"ParmDefinitionID\": {{faker 'number.int' max=99999}},\n        \"AllowableValueID\": {{faker 'number.int' max=99999}},\n        \"ParameterValue\": \"\",\n        \"ValueDescription\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "3677b95c-febf-42ad-a471-b5f56bec2d51",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "4883a17e-1954-47e0-aa35-1b57ea445c77",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "5103ec95-3f23-44a8-9c82-96164f899626",
+        "type": "http",
+        "documentation": "GetCLIDDetailsByNameID.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Party/GetCLIDDetailsByNameID",
+        "responses": [
+          {
+            "uuid": "2c180252-9a3b-4d44-9967-27102e073078",
+            "body": "{\n  \"GetCLIDDetailsByNameIDResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"GetCLIDDetailsByNameID\": [\n      {\n        \"CompanyCode\": \"\",\n        \"ClientID\": \"\",\n        \"CompanyNameID\": \"\",\n        \"ClientIDName\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "9bc69fd1-2839-4199-aaa6-8a6e77d374cf",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "48991b26-3fc7-4063-89a3-ee536563e09d",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "6f87ec9b-7622-4405-8c88-a4a2f5223772",
+        "type": "http",
+        "documentation": "GetCLIDDetailsByClientID.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Party/GetCLIDDetailsByClientID",
+        "responses": [
+          {
+            "uuid": "d9bb91ee-649e-483d-98db-7b10b1b065f2",
+            "body": "{\n  \"GetCLIDDetailsByClientIDResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"GetCLIDDetailsByClientID\": [\n      {\n        \"CompanyCode\": \"\",\n        \"ClientID\": \"\",\n        \"CompanyNameID\": {{faker 'number.int' max=99999}},\n        \"ClientIDName\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "79212cef-6d0a-48fc-a688-f673dd4803f1",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "911e31aa-ff91-4887-ba91-2144bafba9f5",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "108d9fee-8dfe-4102-89c9-388f5d31532a",
+        "type": "http",
+        "documentation": "GetNameService.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Party/GetNameService",
+        "responses": [
+          {
+            "uuid": "1e6b114e-4538-4e1c-9f82-f7947920ca8a",
+            "body": "{\n  \"GetNameSeviceResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"BusinessEmail\": \"\",\n    \"BusinessName\": \"\",\n    \"BusinessPrefix\": \"\",\n    \"BusinessSuffix\": \"\",\n    \"BusinessTaxID\": \"\",\n    \"DateOfDeath\": {{faker 'number.int' max=99999}},\n    \"DeceasedFlag\": \"\",\n    \"ForeignTaxID\": \"\",\n    \"FormatName\": \"\",\n    \"IndividualFirstName\": \"\",\n    \"IndividualLastName\": \"\",\n    \"IndividualMiddleName\": \"\",\n    \"IndividualPrefix\": \"\",\n    \"IndividualReverse\": \"\",\n    \"IndividualSSN\": \"\",\n    \"IndividualSuffix\": \"\",\n    \"NameDateOfBirth\": {{faker 'number.int' max=99999}},\n    \"NameGender\": \"\",\n    \"NameType\": \"\",\n    \"PersonalEmail\": \"\",\n    \"TaxCertificationCode\": \"\",\n    \"TaxCertificationDate\": {{faker 'number.int' max=99999}},\n    \"TaxStatus\": \"\",\n    \"TaxWithholdingFlag\": \"\"\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "20e64ac2-5dea-43a6-8c55-c8bf6b20602e",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "a42d26e1-8005-499a-be03-52695457d22a",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "09fda1e3-ff81-4d9c-b4d9-1b2dde73d38f",
+        "type": "http",
+        "documentation": "getCustomParameter.",
+        "method": "get",
+        "endpoint": "LPRestPartyAPI/v1/PartyCustomParameter/:GUID/:NameId/getCustomParameter",
+        "responses": [
+          {
+            "uuid": "b094246f-5726-495f-a21e-14cb157d104f",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"data\": {\n    \"PartyCustomParameterInfo\": [\n      {\n        \"ParameterName\": \"\",\n        \"ParameterValue\": \"\",\n        \"ParameterType\": \"\",\n        \"ValueDesc\": \"\",\n        \"AlternateValue\": \"\",\n        \"DateAdded\": {{faker 'number.int' max=99999}},\n        \"TimeAdded\": {{faker 'number.int' max=99999}},\n        \"CoderIdAdded\": \"\",\n        \"DateUpdated\": {{faker 'number.int' max=99999}},\n        \"TimeUpdated\": {{faker 'number.int' max=99999}},\n        \"CoderIdUpdated\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "42a6dcb7-00fc-4ed3-aa49-f58ebf8ae6a8",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "2d58ea52-3c01-462b-905f-296b88888c30",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "2f03dedf-9a83-4223-b809-68f30f7876b8",
+        "type": "http",
+        "documentation": "getCustomParameter.",
+        "method": "get",
+        "endpoint": "LPRestPartyAPI/v1/PartyCustomParameter/:GUID/:NameId/:ParamDefinitionId/getCustomParameter",
+        "responses": [
+          {
+            "uuid": "e8b782a4-c696-438e-a688-1ddeafc9911b",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"data\": {\n    \"PartyCustomParameterInfo\": [\n      {\n        \"ParameterName\": \"\",\n        \"ParameterValue\": \"\",\n        \"ParameterType\": \"\",\n        \"ValueDesc\": \"\",\n        \"AlternateValue\": \"\",\n        \"DateAdded\": {{faker 'number.int' max=99999}},\n        \"TimeAdded\": {{faker 'number.int' max=99999}},\n        \"CoderIdAdded\": \"\",\n        \"DateUpdated\": {{faker 'number.int' max=99999}},\n        \"TimeUpdated\": {{faker 'number.int' max=99999}},\n        \"CoderIdUpdated\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "01634e8a-f016-41be-85ac-304d089d3a95",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "2a98ec4f-2ec6-4f62-beec-ab65ec6da70f",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "1e70cbcb-a09d-4b07-a88e-688fee483e81",
+        "type": "http",
+        "documentation": "InsertPRNADetails.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/PartyCustomParameter/InsertPRNADetails",
+        "responses": [
+          {
+            "uuid": "c37e202a-baf7-41f0-9bc2-399123f8dfd8",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"AddedOnTime\": \"\"\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "b8e3fc5d-eb31-47d7-b234-f99b365d20af",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "ce9a1884-cf05-4c57-aeb5-7d15b3146e58",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "edfadff9-3a65-4feb-821c-ce4959600304",
+        "type": "http",
+        "documentation": "UpdatePRNADetails.",
+        "method": "put",
+        "endpoint": "LPRestPartyAPI/v1/PartyCustomParameter/UpdatePRNADetails",
+        "responses": [
+          {
+            "uuid": "56ae51a9-69e1-4bca-ba44-5d8c9487ef85",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"UpdatedOnTime\": \"\"\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "bda1f0bf-35c4-4ce9-b4d6-765aaa5c7808",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "f461dc87-069a-4a49-818a-91b316c77d85",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "3ac0bf54-21ed-4ebc-bd6d-164e27e56563",
+        "type": "http",
+        "documentation": "DeletePRNADetails.",
+        "method": "delete",
+        "endpoint": "LPRestPartyAPI/v1/PartyCustomParameter/:GUID/:NameId/:ParamDefinitionId/DeletePRNADetails",
+        "responses": [
+          {
+            "uuid": "fbbf00d1-b214-4a85-b77c-e7f9b6b73d39",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\"\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "532dad5f-7075-4bc6-af2f-f81c2576e0c8",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "3164380c-121a-472f-bef7-06f7160f6fa4",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "dbe9161c-940c-40be-8c28-0bcba9d33709",
+        "type": "http",
+        "documentation": "AddRelation.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v1/Relation/AddRelation",
+        "responses": [
+          {
+            "uuid": "d78f7193-aba5-48e1-b0ce-3655f91762d2",
+            "body": "{\n  \"AddRelationResult\": {\n    \"CorrespondenceLetters\": [\n      {\n        \"CompanyCode\": \"\",\n        \"Letter\": \"\",\n        \"PolicyNumber\": \"\",\n        \"ProcessName\": \"\",\n        \"SetupType\": \"\",\n        \"Type\": \"\",\n        \"CorrespondenceCopy\": [\n          {\n            \"Copies\": {{faker 'number.int' max=99999}},\n            \"FileCopies\": {{faker 'number.int' max=99999}},\n            \"LetterNumber\": {{faker 'number.int' max=99999}},\n            \"RelationCode\": \"\"\n          }\n        ]\n      }\n    ],\n    \"UpdateErrors\": [\n      {\n        \"ErrorCode\": {{faker 'number.int' max=99999}},\n        \"ErrorMessage\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "8a6f9a87-8c4b-4657-9ada-7ba14c1521c4",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "4de0a844-2979-4d84-b022-e99bab336abb",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "1ea125a3-4ef8-48c9-8d27-6abce9281e5d",
+        "type": "http",
+        "documentation": "UpdateRelation.",
+        "method": "put",
+        "endpoint": "LPRestPartyAPI/v1/Relation/UpdateRelation",
+        "responses": [
+          {
+            "uuid": "5e2861be-5cdd-4d94-8242-f3bb184a14ee",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"UpdateRelationResult\": [\n    {\n      \"CorrespondenceLetters\": [\n        {\n          \"CompanyCode\": \"\",\n          \"Letter\": \"\",\n          \"PolicyNumber\": \"\",\n          \"ProcessName\": \"\",\n          \"SetupType\": \"\",\n          \"Type\": \"\",\n          \"CorrespondenceCopy\": [\n            {\n              \"Copies\": {{faker 'number.int' max=99999}},\n              \"FileCopies\": {{faker 'number.int' max=99999}},\n              \"LetterNumber\": {{faker 'number.int' max=99999}},\n              \"RelationCode\": \"\"\n            }\n          ]\n        }\n      ],\n      \"UpdateErrors\": [\n        {\n          \"ErrorCode\": {{faker 'number.int' max=99999}},\n          \"ErrorMessage\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "7843282c-1c6c-4eb5-8b59-e955fec8909e",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "ff6f6cb2-9850-4c9d-b57f-aca923e0e427",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "c8fffa39-8845-4150-ac7f-882d0f83f838",
+        "type": "http",
+        "documentation": "DeleteRelation.",
+        "method": "delete",
+        "endpoint": "LPRestPartyAPI/v1/Relation/DeleteRelation",
+        "responses": [
+          {
+            "uuid": "321024c8-fd6f-48fa-8395-ea1cbab1ad5d",
+            "body": "{\n  \"DeleteRelationResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\"\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "bdf27d81-8b72-4d08-b746-99388521e9ba",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "5107afca-7c2e-47d4-aa2a-a880b93c35f9",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "08b6ab93-2d2a-4e66-bf80-2ba73501eabf",
+        "type": "http",
+        "documentation": "GetDirectDepositHistory.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v2/History/GetDirectDepositHistory",
+        "responses": [
+          {
+            "uuid": "d622767c-4f83-4b81-b4e5-b54df78aa575",
+            "body": "{\n  \"GetDirectDepositHistoryResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"GetDirectDepositHistory\": [\n      {\n        \"NextPrenoteDate\": \"\",\n        \"NameID\": \"\",\n        \"CompanyCode\": \"\",\n        \"PolicyNumber\": \"\",\n        \"EndDate\": \"\",\n        \"TranCode\": \"\",\n        \"BankNameID\": \"\",\n        \"PayeeBankAccount\": \"\",\n        \"LastPrenoteDate\": \"\",\n        \"PrenoteLagDays\": \"\",\n        \"DateAdded\": \"\",\n        \"TimeAdded\": \"\",\n        \"CoderAdded\": \"\",\n        \"DateUpdated\": \"\",\n        \"TimeUpdated\": \"\",\n        \"CoderUpdated\": \"\",\n        \"RecordFunction\": \"\",\n        \"DDPHUpdCount\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "be616942-52b1-4180-b557-1443c58cdf1a",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "fed105e9-2ef7-47f0-89dc-f1c67b126952",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "4889eaa0-27f6-4d85-9ed1-996ad940ddda",
+        "type": "http",
+        "documentation": "GetPartyRelationships.",
+        "method": "get",
+        "endpoint": "LPRestPartyAPI/v2/Party/:GUID/:nameId/GetPartyRelationships",
+        "responses": [
+          {
+            "uuid": "d2a64807-75cd-4c81-adac-dc97f1c0d7fd",
+            "body": "{\n  \"GetPartyRelationshipsResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"PartyRelationshipsResp\": [\n      {\n        \"NameID\": {{faker 'number.int' max=99999}},\n        \"RelateCode\": \"\",\n        \"IdentifyingAlpha\": \"\",\n        \"BenefitSeqNumber\": {{faker 'number.int' max=99999}},\n        \"ContactCaseNum\": \"\",\n        \"ContactPayorId\": {{faker 'number.int' max=99999}},\n        \"SubTypeCode\": \"\",\n        \"PctOfInterest\": {{faker 'number.float'}},\n        \"AMTOfInterest\": {{faker 'number.float'}},\n        \"CompanyCode\": \"\",\n        \"PolicyNumber\": \"\",\n        \"ContractCode\": \"\",\n        \"ContractDate\": {{faker 'number.int' max=99999}},\n        \"LineOfBusiness\": \"\",\n        \"ProductCode\": \"\",\n        \"TaxQualifyCode\": \"\",\n        \"IssueState\": \"\",\n        \"IssueDate\": {{faker 'number.int' max=99999}},\n        \"BillingCode\": \"\",\n        \"BillingForm\": \"\",\n        \"BillingMode\": \"\",\n        \"ModePremium\": {{faker 'number.float'}},\n        \"PaidToDate\": {{faker 'number.int' max=99999}},\n        \"FaceAmount\": {{faker 'number.float'}},\n        \"PolicySpecialMode\": \"\",\n        \"AgentName\": \"\",\n        \"ActualBillDate\": {{faker 'number.int' max=99999}},\n        \"ProductDescription\": \"\",\n        \"AmountDue\": {{faker 'number.float'}},\n        \"ContractReason\": \"\",\n        \"IssueAge\": \"\",\n        \"SexCode\": \"\",\n        \"Insured\": \"\",\n        \"PolicyOwner\": \"\",\n        \"BillingDate\": {{faker 'number.int' max=99999}},\n        \"DueDate\": {{faker 'number.int' max=99999}},\n        \"BillingReason\": \"\",\n        \"PaidUpType\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 201,
+            "label": "Created",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "15edf8dc-6664-4366-9740-cc64ab557d77",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "923f77a3-b79d-431e-98ae-73d9906b670d",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "57056e81-64ad-4d75-80b6-772c4bec6a00",
+        "type": "http",
+        "documentation": "PartySearch.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v2/Party/:GUID/PartySearch",
+        "responses": [
+          {
+            "uuid": "910d4ba7-87e7-4c86-97d0-a26650fdb9be",
+            "body": "{\n  \"PartySearchResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"PartySearchRes\": [\n      {\n        \"NameId\": \"\",\n        \"NameFormatCode\": \"\",\n        \"Ssn\": \"\",\n        \"IndividualPrefix\": \"\",\n        \"IndividualFirst\": \"\",\n        \"IndividualMiddle\": \"\",\n        \"IndividualLast\": \"\",\n        \"IndividualSuffix\": \"\",\n        \"NameBusiness\": \"\",\n        \"BusinessPrefix\": \"\",\n        \"BusinessSuffix\": \"\",\n        \"DateOfBirth\": \"\",\n        \"SexCode\": \"\",\n        \"AddressId\": \"\",\n        \"Line1\": \"\",\n        \"Line2\": \"\",\n        \"Line3\": \"\",\n        \"City\": \"\",\n        \"State\": \"\",\n        \"ZipCode\": \"\",\n        \"TeleNum\": \"\",\n        \"CellNumber\": \"\",\n        \"AgentRecordExits\": \"\",\n        \"ProviderRecordExits\": \"\",\n        \"DeceasedFlag\": \"\",\n        \"PersonalEmailAddress\": \"\",\n        \"BusinessEmailAddress\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "8755b90c-9855-4405-bb92-1d41dab8556e",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "22bb7dfe-d42a-447a-bb95-c28cbb0d3e9b",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "b81b76e3-fa81-4409-9c2c-a3df24d00ee4",
+        "type": "http",
+        "documentation": "GetNameService.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v2/Party/:GUID/GetNameService",
+        "responses": [
+          {
+            "uuid": "1992e356-5231-448f-b000-cb44fb06c2be",
+            "body": "{\n  \"GetNameSeviceResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"BusinessEmail\": \"\",\n    \"BusinessName\": \"\",\n    \"BusinessPrefix\": \"\",\n    \"BusinessSuffix\": \"\",\n    \"BusinessTaxID\": \"\",\n    \"DateOfDeath\": {{faker 'number.int' max=99999}},\n    \"DeceasedFlag\": \"\",\n    \"ForeignTaxID\": \"\",\n    \"FormatName\": \"\",\n    \"IndividualFirstName\": \"\",\n    \"IndividualLastName\": \"\",\n    \"IndividualMiddleName\": \"\",\n    \"IndividualPrefix\": \"\",\n    \"IndividualReverse\": \"\",\n    \"IndividualSSN\": \"\",\n    \"IndividualSuffix\": \"\",\n    \"NameDateOfBirth\": {{faker 'number.int' max=99999}},\n    \"NameGender\": \"\",\n    \"NameType\": \"\",\n    \"PersonalEmail\": \"\",\n    \"TaxCertificationCode\": \"\",\n    \"TaxCertificationDate\": {{faker 'number.int' max=99999}},\n    \"TaxStatus\": \"\",\n    \"TaxWithholdingFlag\": \"\"\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "1e9b4f74-796b-43e8-9021-e695204689ef",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "e0da8334-263c-483b-a3f2-e2ae534600fc",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "9994e506-35b8-404d-a26f-1ddfb86e6cc0",
+        "type": "http",
+        "documentation": "UpdateRelation.",
+        "method": "put",
+        "endpoint": "LPRestPartyAPI/v2/Relation/:GUID/UpdateRelation",
+        "responses": [
+          {
+            "uuid": "4d325ac9-5201-4d53-8934-ff6462969aec",
+            "body": "{\n  \"GUID\": \"\",\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"Message\": \"\",\n  \"UpdateRelationResult\": [\n    {\n      \"CorrespondenceLetters\": [\n        {\n          \"CompanyCode\": \"\",\n          \"Letter\": \"\",\n          \"PolicyNumber\": \"\",\n          \"ProcessName\": \"\",\n          \"SetupType\": \"\",\n          \"Type\": \"\",\n          \"CorrespondenceCopy\": [\n            {\n              \"Copies\": {{faker 'number.int' max=99999}},\n              \"FileCopies\": {{faker 'number.int' max=99999}},\n              \"LetterNumber\": {{faker 'number.int' max=99999}},\n              \"RelationCode\": \"\"\n            }\n          ]\n        }\n      ],\n      \"UpdateErrors\": [\n        {\n          \"ErrorCode\": {{faker 'number.int' max=99999}},\n          \"ErrorMessage\": \"\"\n        }\n      ]\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "8095f27d-5567-4e6b-bcbb-a0247fe67824",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "f2a20d50-243c-4f17-a165-8ab080867dec",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "07964f7c-162a-446d-acf7-0a621f3a4589",
+        "type": "http",
+        "documentation": "GetPartyRelationships.",
+        "method": "get",
+        "endpoint": "LPRestPartyAPI/v3/Party/:GUID/:nameId/GetPartyRelationships",
+        "responses": [
+          {
+            "uuid": "668d31cd-9608-45d5-8ae8-eececb2a3106",
+            "body": "{\n  \"GetPartyRelationshipsResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"PartyRelationshipsResp\": [\n      {\n        \"NameID\": {{faker 'number.int' max=99999}},\n        \"RelateCode\": \"\",\n        \"IdentifyingAlpha\": \"\",\n        \"BenefitSeqNumber\": {{faker 'number.int' max=99999}},\n        \"ContactCaseNum\": \"\",\n        \"ContactPayorId\": {{faker 'number.int' max=99999}},\n        \"SubTypeCode\": \"\",\n        \"PctOfInterest\": {{faker 'number.float'}},\n        \"AMTOfInterest\": {{faker 'number.float'}},\n        \"CompanyCode\": \"\",\n        \"PolicyNumber\": \"\",\n        \"ContractCode\": \"\",\n        \"ContractDate\": {{faker 'number.int' max=99999}},\n        \"LineOfBusiness\": \"\",\n        \"ProductCode\": \"\",\n        \"TaxQualifyCode\": \"\",\n        \"IssueState\": \"\",\n        \"IssueDate\": {{faker 'number.int' max=99999}},\n        \"BillingCode\": \"\",\n        \"BillingForm\": \"\",\n        \"BillingMode\": \"\",\n        \"ModePremium\": {{faker 'number.float'}},\n        \"PaidToDate\": {{faker 'number.int' max=99999}},\n        \"FaceAmount\": {{faker 'number.float'}},\n        \"PolicySpecialMode\": \"\",\n        \"AgentName\": \"\",\n        \"ActualBillDate\": {{faker 'number.int' max=99999}},\n        \"ProductDescription\": \"\",\n        \"AmountDue\": {{faker 'number.float'}},\n        \"ContractReason\": \"\",\n        \"IssueAge\": \"\",\n        \"SexCode\": \"\",\n        \"Insured\": \"\",\n        \"PolicyOwner\": \"\",\n        \"BillingDate\": {{faker 'number.int' max=99999}},\n        \"DueDate\": {{faker 'number.int' max=99999}},\n        \"BillingReason\": \"\",\n        \"PaidUpType\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 201,
+            "label": "Created",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "11bf1e13-1009-4f50-a085-f56b3e9b3b65",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "b2758f72-c14d-46a8-9bcb-ae106e476be5",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "a1e9a2eb-d385-4488-a365-ce16da7e2aff",
+        "type": "http",
+        "documentation": "PartySearch.",
+        "method": "post",
+        "endpoint": "LPRestPartyAPI/v3/Party/:GUID/PartySearch",
+        "responses": [
+          {
+            "uuid": "badefbcd-4b34-4eba-a951-633187810424",
+            "body": "{\n  \"PartySearchResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"PartySearchRes\": [\n      {\n        \"NameId\": \"\",\n        \"NameFormatCode\": \"\",\n        \"Ssn\": \"\",\n        \"IndividualPrefix\": \"\",\n        \"IndividualFirst\": \"\",\n        \"IndividualMiddle\": \"\",\n        \"IndividualLast\": \"\",\n        \"IndividualSuffix\": \"\",\n        \"NameBusiness\": \"\",\n        \"BusinessPrefix\": \"\",\n        \"BusinessSuffix\": \"\",\n        \"DateOfBirth\": \"\",\n        \"SexCode\": \"\",\n        \"AddressId\": \"\",\n        \"Line1\": \"\",\n        \"Line2\": \"\",\n        \"Line3\": \"\",\n        \"City\": \"\",\n        \"State\": \"\",\n        \"ZipCode\": \"\",\n        \"TeleNum\": \"\",\n        \"CellNumber\": \"\",\n        \"AgentRecordExits\": \"\",\n        \"ProviderRecordExits\": \"\",\n        \"DeceasedFlag\": \"\",\n        \"PersonalEmailAddress\": \"\",\n        \"BusinessEmailAddress\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 200,
+            "label": "Success",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "2bf8dbdf-f584-4c91-8bc0-c676d5f89c21",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "1d4812f4-b0e4-4cdc-801f-034a85e2fb2c",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
+        "uuid": "1a50f0af-115f-488d-b11b-b971c4482106",
+        "type": "http",
+        "documentation": "GetPartyRelationships.",
+        "method": "get",
+        "endpoint": "LPRestPartyAPI/v4/Party/:GUID/:nameId/GetPartyRelationships",
+        "responses": [
+          {
+            "uuid": "c3584586-a844-492c-b4c7-77165b5eee8a",
+            "body": "{\n  \"GetPartyRelationshipsResult\": {\n    \"GUID\": \"\",\n    \"ReturnCode\": {{faker 'number.int' max=99999}},\n    \"Message\": \"\",\n    \"PartyRelationshipsResp\": [\n      {\n        \"NameID\": {{faker 'number.int' max=99999}},\n        \"RelateCode\": \"\",\n        \"IdentifyingAlpha\": \"\",\n        \"BenefitSeqNumber\": {{faker 'number.int' max=99999}},\n        \"ContactCaseNum\": \"\",\n        \"ContactPayorId\": {{faker 'number.int' max=99999}},\n        \"SubTypeCode\": \"\",\n        \"PctOfInterest\": {{faker 'number.float'}},\n        \"AMTOfInterest\": {{faker 'number.float'}},\n        \"CompanyCode\": \"\",\n        \"PolicyNumber\": \"\",\n        \"ContractCode\": \"\",\n        \"ContractDate\": {{faker 'number.int' max=99999}},\n        \"LineOfBusiness\": \"\",\n        \"ProductCode\": \"\",\n        \"TaxQualifyCode\": \"\",\n        \"IssueState\": \"\",\n        \"IssueDate\": {{faker 'number.int' max=99999}},\n        \"BillingCode\": \"\",\n        \"BillingForm\": \"\",\n        \"BillingMode\": \"\",\n        \"ModePremium\": {{faker 'number.float'}},\n        \"PaidToDate\": {{faker 'number.int' max=99999}},\n        \"FaceAmount\": {{faker 'number.float'}},\n        \"PolicySpecialMode\": \"\",\n        \"AgentName\": \"\",\n        \"ActualBillDate\": {{faker 'number.int' max=99999}},\n        \"ProductDescription\": \"\",\n        \"AmountDue\": {{faker 'number.float'}},\n        \"ContractReason\": \"\",\n        \"IssueAge\": \"\",\n        \"SexCode\": \"\",\n        \"Insured\": \"\",\n        \"PolicyOwner\": \"\",\n        \"BillingDate\": {{faker 'number.int' max=99999}},\n        \"DueDate\": {{faker 'number.int' max=99999}},\n        \"BillingReason\": \"\",\n        \"PaidUpType\": \"\"\n      }\n    ]\n  }\n}",
+            "latency": 0,
+            "statusCode": 201,
+            "label": "Created",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": true,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "1c372c3b-bd18-42eb-a4f2-7040ebbf6319",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 400,
+            "label": "Bad Request",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          },
+          {
+            "uuid": "27ca2a1e-0faf-4134-a656-0cf4ed772b74",
+            "body": "{\n  \"ReturnCode\": {{faker 'number.int' max=99999}},\n  \"MessageInfo\": [\n    {\n      \"Message\": \"\"\n    }\n  ]\n}",
+            "latency": 0,
+            "statusCode": 417,
+            "label": "Client Error",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "bodyType": "INLINE",
+            "filePath": "",
+            "databucketID": "",
+            "sendFileAsBody": false,
+            "rules": [],
+            "rulesOperator": "OR",
+            "disableTemplating": false,
+            "fallbackTo404": false,
+            "default": false,
+            "crudKey": "id",
+            "callbacks": []
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      }
+    ],
+    "rootChildren": [
+      {
+        "type": "route",
+        "uuid": "5a44ed48-836e-4c87-a499-f3bd2af13f63"
+      },
+      {
+        "type": "route",
+        "uuid": "caf41094-352c-4a56-8abd-ce3ed5cce509"
+      },
+      {
+        "type": "route",
+        "uuid": "79ce099b-df8f-4d89-93d0-6b8d5fc856b2"
+      },
+      {
+        "type": "route",
+        "uuid": "6d62c58a-96ac-41f1-9496-46d0901d06d0"
+      },
+      {
+        "type": "route",
+        "uuid": "ea3b0a9e-1cce-4866-9891-7744f29eaa90"
+      },
+      {
+        "type": "route",
+        "uuid": "5ec67d7c-e6ab-422a-816e-bbc6472cfce4"
+      },
+      {
+        "type": "route",
+        "uuid": "e55b99a2-f32f-4989-a874-a773957c0226"
+      },
+      {
+        "type": "route",
+        "uuid": "25ef9831-39e7-45ea-881d-578209e01e4a"
+      },
+      {
+        "type": "route",
+        "uuid": "aefc13d5-a923-4207-848c-b3c10c26ee94"
+      },
+      {
+        "type": "route",
+        "uuid": "14308e55-1c82-4562-81e3-a8b63083c589"
+      },
+      {
+        "type": "route",
+        "uuid": "890bc2ac-cfef-41e3-8560-51df56693da9"
+      },
+      {
+        "type": "route",
+        "uuid": "fb4b1830-5594-4a5e-9292-1e25df618968"
+      },
+      {
+        "type": "route",
+        "uuid": "1d1da33a-b7d6-4fa5-886b-f28c320b1be6"
+      },
+      {
+        "type": "route",
+        "uuid": "ecaedaa6-c175-4d45-a8bb-b29c2523a383"
+      },
+      {
+        "type": "route",
+        "uuid": "677fe86a-2f75-43ce-8773-0cf2f091f070"
+      },
+      {
+        "type": "route",
+        "uuid": "3ee7df9b-cfec-4523-b5d2-27fdc76dee7c"
+      },
+      {
+        "type": "route",
+        "uuid": "8aab8150-dce5-4348-b6ef-ec2f6cc92908"
+      },
+      {
+        "type": "route",
+        "uuid": "cc62c818-202d-48e8-9266-761d2864464d"
+      },
+      {
+        "type": "route",
+        "uuid": "228cf3a7-d430-4b11-b143-c6f93f6f47a1"
+      },
+      {
+        "type": "route",
+        "uuid": "7dba6622-bf81-4673-a00a-cf0b48d70f6c"
+      },
+      {
+        "type": "route",
+        "uuid": "d0e6d5db-2642-4660-93b1-0f965ab2930f"
+      },
+      {
+        "type": "route",
+        "uuid": "900979cc-c329-4a4c-986e-ce32a7155ef1"
+      },
+      {
+        "type": "route",
+        "uuid": "8f0fce4c-3d1f-4ad4-abd6-9d7c4cf00414"
+      },
+      {
+        "type": "route",
+        "uuid": "6847a856-ba0e-498e-85cb-cb6779988199"
+      },
+      {
+        "type": "route",
+        "uuid": "64c27327-c431-4115-bbef-3310e15e6573"
+      },
+      {
+        "type": "route",
+        "uuid": "6140b81d-a008-44f9-aabc-a58691f0635b"
+      },
+      {
+        "type": "route",
+        "uuid": "d36c1445-e53e-4618-a0e3-248d06bc336e"
+      },
+      {
+        "type": "route",
+        "uuid": "343215d9-4d5d-4b08-8214-c9a06033ed51"
+      },
+      {
+        "type": "route",
+        "uuid": "2225eb1b-5350-49b8-ad89-6d72df07e826"
+      },
+      {
+        "type": "route",
+        "uuid": "2a420e5c-ea92-49ff-9668-2b4ae5859fe6"
+      },
+      {
+        "type": "route",
+        "uuid": "5103ec95-3f23-44a8-9c82-96164f899626"
+      },
+      {
+        "type": "route",
+        "uuid": "6f87ec9b-7622-4405-8c88-a4a2f5223772"
+      },
+      {
+        "type": "route",
+        "uuid": "108d9fee-8dfe-4102-89c9-388f5d31532a"
+      },
+      {
+        "type": "route",
+        "uuid": "09fda1e3-ff81-4d9c-b4d9-1b2dde73d38f"
+      },
+      {
+        "type": "route",
+        "uuid": "2f03dedf-9a83-4223-b809-68f30f7876b8"
+      },
+      {
+        "type": "route",
+        "uuid": "1e70cbcb-a09d-4b07-a88e-688fee483e81"
+      },
+      {
+        "type": "route",
+        "uuid": "edfadff9-3a65-4feb-821c-ce4959600304"
+      },
+      {
+        "type": "route",
+        "uuid": "3ac0bf54-21ed-4ebc-bd6d-164e27e56563"
+      },
+      {
+        "type": "route",
+        "uuid": "dbe9161c-940c-40be-8c28-0bcba9d33709"
+      },
+      {
+        "type": "route",
+        "uuid": "1ea125a3-4ef8-48c9-8d27-6abce9281e5d"
+      },
+      {
+        "type": "route",
+        "uuid": "c8fffa39-8845-4150-ac7f-882d0f83f838"
+      },
+      {
+        "type": "route",
+        "uuid": "08b6ab93-2d2a-4e66-bf80-2ba73501eabf"
+      },
+      {
+        "type": "route",
+        "uuid": "4889eaa0-27f6-4d85-9ed1-996ad940ddda"
+      },
+      {
+        "type": "route",
+        "uuid": "57056e81-64ad-4d75-80b6-772c4bec6a00"
+      },
+      {
+        "type": "route",
+        "uuid": "b81b76e3-fa81-4409-9c2c-a3df24d00ee4"
+      },
+      {
+        "type": "route",
+        "uuid": "9994e506-35b8-404d-a26f-1ddfb86e6cc0"
+      },
+      {
+        "type": "route",
+        "uuid": "07964f7c-162a-446d-acf7-0a621f3a4589"
+      },
+      {
+        "type": "route",
+        "uuid": "a1e9a2eb-d385-4488-a365-ce16da7e2aff"
+      },
+      {
+        "type": "route",
+        "uuid": "1a50f0af-115f-488d-b11b-b971c4482106"
+      }
+    ],
+    "proxyMode": false,
+    "proxyHost": "",
+    "proxyRemovePrefix": false,
+    "tlsOptions": {
+      "enabled": false,
+      "type": "CERT",
+      "pfxPath": "",
+      "certPath": "",
+      "keyPath": "",
+      "caPath": "",
+      "passphrase": ""
+    },
+    "cors": true,
+    "headers": [],
+    "proxyReqHeaders": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "proxyResHeaders": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "data": [],
+    "callbacks": []
+  }
