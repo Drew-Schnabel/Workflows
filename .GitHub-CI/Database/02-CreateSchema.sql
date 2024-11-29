@@ -1,0 +1,7 @@
+
+BEGIN TRANSACTION;
+
+CREATE SCHEMA InsuranceBusinessService;
+
+COMMIT TRANSACTION;
+
