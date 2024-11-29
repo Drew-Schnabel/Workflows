@@ -1,22 +1,34 @@
 {
-    "name": "Underwriting Service",
-    "port": 3006,
-    "routes": [
-      {
-        "method": "POST",
-        "endpoint": "/ulissia-webservices/services/UnderwritingService?wsdl",
-        "responses": [
-          {
-            "statusCode": 200,
-            "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap:Body>\n    <Response>\n      <Message>Success</Message>\n    </Response>\n  </soap:Body>\n</soap:Envelope>",
-            "headers": [
-              {
-                "key": "Content-Type",
-                "value": "text/xml"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+  "name": "UnderwritingService",
+  "type": "environment",
+  "port": 3006,
+  "routes": [
+    {
+      "uuid": "3c12d3c2-7a9d-48a9-b123-2eafef23b8c1",
+      "documentation": "Handles SOAP requests for UnderwritingService",
+      "method": "POST",
+      "endpoint": "/ulissia-webservices/services/UnderwritingService?wsdl",
+      "responses": [
+        {
+          "uuid": "f872d2e4-5a0c-4e78-b9cf-8a34c97a7e2c",
+          "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\n  <soap:Body>\n    <Response>\n      <Message>Success</Message>\n    </Response>\n  </soap:Body>\n</soap:Envelope>",
+          "latency": 0,
+          "statusCode": 200,
+          "headers": [
+            {
+              "key": "Content-Type",
+              "value": "text/xml"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "proxyMode": false,
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false
+  },
+  "hostname": "0.0.0.0",
+  "environmentUUID": "12e34f56-7c89-45ba-9012-3f2b1c79c7de"
+}

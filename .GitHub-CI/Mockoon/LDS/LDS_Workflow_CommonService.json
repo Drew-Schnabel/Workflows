@@ -1,14 +1,19 @@
 {
   "name": "CommonService",
+  "type": "environment",
   "port": 3005,
   "routes": [
     {
+      "uuid": "1f24d2b1-6d5d-4bb8-8b64-1e91dc64c3b6",
+      "documentation": "Handles SOAP requests for CommonService",
       "method": "POST",
       "endpoint": "/ulissia-webservices/services/CommonService?wsdl",
       "responses": [
         {
-          "statusCode": 200,
+          "uuid": "bc23f76c-1d25-462c-a852-6bd58dff0ea6",
           "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\">\n  <soapenv:Body>\n    <ns1:Response xmlns:ns1=\"http://example.com/commonservice\">\n      <ns1:Status>Success</ns1:Status>\n    </ns1:Response>\n  </soapenv:Body>\n</soapenv:Envelope>",
+          "latency": 0,
+          "statusCode": 200,
           "headers": [
             {
               "key": "Content-Type",
@@ -18,5 +23,12 @@
         }
       ]
     }
-  ]
+  ],
+  "proxyMode": false,
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false
+  },
+  "hostname": "0.0.0.0",
+  "environmentUUID": "2b54d2b1-7d5e-4cc8-9b34-2f91dc64c3b7"
 }

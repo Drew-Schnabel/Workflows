@@ -9,6 +9,28 @@
     "folders": [],
     "routes": [
       {
+        "uuid": "00475f0c-3232-4a9d-ad5a-371bac719f48",
+        "type": "http",
+        "documentation": "Product.",
+        "method": "POST",
+        "endpoint": "/LPRestProduct",
+        "responses": [
+          {
+            "statusCode": 200,
+            "body": "{\"message\": \"Product successf\"}",
+            "headers": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        ],
+        "responseMode": null,
+        "streamingMode": null,
+        "streamingInterval": 0
+      },
+      {
         "uuid": "dfaa4f00-7d8c-430a-9f7e-303451bdfcd5",
         "type": "http",
         "documentation": "AddIssueLimitsByAgeandTaxQualCode.",
