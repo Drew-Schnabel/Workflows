@@ -28,16 +28,22 @@ jobs:
       - name: Create Insurance-Business-Services folder
         run: mkdir -p Insurance-Business-Services
 
+      - name: Upload Insurance-Business-Services as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: insurance-business-services
+          path: Insurance-Business-Services/
+
   # Job 2: Pull LIPAS-Client
   Pull-LIPAS-Client:
     runs-on: ubuntu-latest
     needs: Setup-Environment
 
     steps:
-      - name: Download Setup-Environment
+      - name: Download Insurance-Business-Services Artifact
         uses: actions/download-artifact@v3
         with:
-          name: Insurance-Business-Services
+          name: insurance-business-services
           path: Insurance-Business-Services/
 
       - name: Clone LIPAS-Client Repository
@@ -50,7 +56,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: lipas-client
-          path: Insurance-Business-Services/LIPAS-Client
+          path: Insurance-Business-Services/LIPAS-Client/
 
   # Job 3: Pull A.R.C.H.E.R
   Pull-ARCHER:
@@ -58,10 +64,10 @@ jobs:
     needs: Setup-Environment
 
     steps:
-      - name: Download Setup-Environment
+      - name: Download Insurance-Business-Services Artifact
         uses: actions/download-artifact@v3
         with:
-          name: Insurance-Business-Services
+          name: insurance-business-services
           path: Insurance-Business-Services/
 
       - name: Clone A.R.C.H.E.R Repository
@@ -74,7 +80,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: archer
-          path: Insurance-Business-Services/A.R.C.H.E.R
+          path: Insurance-Business-Services/A.R.C.H.E.R/
 
   # Job 4: Setup Database
   Setup-Database:
@@ -95,13 +101,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: lipas-client
-          path: Insurance-Business-Services/LIPAS-Client
-
-      - name: Download A.R.C.H.E.R Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: archer
-          path: Insurance-Business-Services/A.R.C.H.E.R
+          path: Insurance-Business-Services/LIPAS-Client/
 
       - name: Install SQLCMD Tools
         run: |
@@ -157,13 +157,13 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: lipas-client
-          path: Insurance-Business-Services/LIPAS-Client
+          path: Insurance-Business-Services/LIPAS-Client/
 
-      - name: Download A.R.C.H.E.R Artifact
+      - name: Download A.R.C.H.E.R Artifact (if needed)
         uses: actions/download-artifact@v3
         with:
           name: archer
-          path: Insurance-Business-Services/A.R.C.H.E.R
+          path: Insurance-Business-Services/A.R.C.H.E.R/
 
       - name: Set up Mockoon CLI
         run: |
@@ -210,17 +210,11 @@ jobs:
     needs: Mockoon
 
     steps:
-      - name: Download LIPAS-Client Artifact
+      - name: Download Insurance-Business-Services Artifact
         uses: actions/download-artifact@v3
         with:
-          name: lipas-client
-          path: Insurance-Business-Services/LIPAS-Client
-
-      - name: Download A.R.C.H.E.R Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: archer
-          path: Insurance-Business-Services/A.R.C.H.E.R
+          name: insurance-business-services
+          path: Insurance-Business-Services/
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
