@@ -26,13 +26,19 @@ jobs:
           git config --global user.email "actions@github.com"
 
       - name: Create Insurance-Business-Services folder
-        run: mkdir -p Insurance-Business-Services
+        run: |
+          mkdir -p Insurance-Business-Services
+          echo "Insurance-Business-Services folder created." # Debugging line
+          ls -al Insurance-Business-Services/  # Debugging: Check contents
 
       - name: Upload Insurance-Business-Services as Artifact
         uses: actions/upload-artifact@v3
         with:
           name: insurance-business-services
           path: Insurance-Business-Services/
+        # Added check: print contents of the folder before uploading
+      - name: List contents before uploading artifact
+        run: ls -al Insurance-Business-Services/
 
   # Job 2: Pull LIPAS-Client
   Pull-LIPAS-Client:
@@ -46,10 +52,15 @@ jobs:
           name: insurance-business-services
           path: Insurance-Business-Services/
 
-      - name: Clone LIPAS-Client Repository
+      - name: List contents of Insurance-Business-Services
+        run: ls -al Insurance-Business-Services/
+        # This will help verify the folder structure and contents after download.
+
+      - name: Pull LIPAS-Client repository
         run: |
-          git clone --branch development https://github.com/VAINS-Dev/LIPAS-Client.git Insurance-Business-Services/LIPAS-Client
-          cd Insurance-Business-Services/LIPAS-Client
+          cd Insurance-Business-Services
+          git clone --branch development https://github.com/VAINS-Dev/LIPAS-Client.git
+          cd LIPAS-Client
           npm install
 
       - name: Upload LIPAS-Client as Artifact
@@ -61,19 +72,23 @@ jobs:
   # Job 3: Pull A.R.C.H.E.R
   Pull-ARCHER:
     runs-on: ubuntu-latest
-    needs: Setup-Environment
+    needs: Pull-LIPAS-Client
 
     steps:
-      - name: Download Insurance-Business-Services Artifact
+      - name: Download LIPAS-Client artifact
         uses: actions/download-artifact@v3
         with:
-          name: insurance-business-services
-          path: Insurance-Business-Services/
+          name: lipas-client
+          path: Insurance-Business-Services/LIPAS-Client/
 
-      - name: Clone A.R.C.H.E.R Repository
+      - name: List contents of LIPAS-Client folder
+        run: ls -al Insurance-Business-Services/LIPAS-Client/
+
+      - name: Pull A.R.C.H.E.R repository
         run: |
-          git clone --branch development https://github.com/VAINS-Dev/A.R.C.H.E.R.git Insurance-Business-Services/A.R.C.H.E.R
-          cd Insurance-Business-Services/A.R.C.H.E.R
+          cd Insurance-Business-Services
+          git clone --branch development https://github.com/VAINS-Dev/A.R.C.H.E.R.git
+          cd A.R.C.H.E.R
           npm install
 
       - name: Upload A.R.C.H.E.R as Artifact
@@ -82,6 +97,8 @@ jobs:
           name: archer
           path: Insurance-Business-Services/A.R.C.H.E.R/
 
+  # Continue with Setup-Database and other jobs
+  
   # Job 4: Setup Database
   Setup-Database:
     runs-on: ubuntu-latest
