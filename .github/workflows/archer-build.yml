@@ -138,6 +138,7 @@ jobs:
           done
 
   # Job 3: Mockoon Setup
+  # Job 3: Mockoon Setup
   mockoon:
     runs-on: ubuntu-latest
     needs: Setup-Database  # Ensure Setup-Database job is completed
@@ -161,40 +162,11 @@ jobs:
           echo "Listing LIPAS-Client/.GitHub-CI/Mockoon:"
           ls -la Insurance-Business-Services/LIPAS-Client/.GitHub-CI/Mockoon/
 
-      - name: Set up Mockoon CLI
-        run: |
-          # Update the Mockoon CLI version to the latest stable release
-          MOCKOON_VERSION="1.4.3"  # Replace with the latest stable version
-          MOCKOON_URL="https://github.com/mockoon/mockoon-cli/releases/download/v${{MOCKOON_VERSION}}/mockoon-cli-${MOCKOON_VERSION}-linux-x86_64.tar.gz"
+      - name: Install Mockoon CLI via npm
+        run: npm install -g @mockoon/cli
 
-          # Download the Mockoon CLI tar.gz file
-          curl -f -sSL "$MOCKOON_URL" -o mockoon-cli.tar.gz
-
-          # Verify the file was downloaded correctly
-          if [[ ! -s mockoon-cli.tar.gz ]]; then
-            echo "Mockoon CLI download failed or file is empty."
-            exit 1
-          fi
-
-          # Verify the file type
-          FILE_TYPE=$(file mockoon-cli.tar.gz)
-          echo "Downloaded file type: $FILE_TYPE"
-          if [[ "$FILE_TYPE" != *"gzip compressed data"* ]]; then
-            echo "Downloaded file is not a valid gzip archive."
-            exit 1
-          fi
-
-          # Extract the tar.gz file
-          tar -xzvf mockoon-cli.tar.gz
-
-          # Move the mockoon-cli binary to /usr/local/bin
-          sudo mv mockoon-cli /usr/local/bin/mockoon-cli
-
-          # Verify Mockoon CLI installation
-          mockoon-cli --version
-
-          # Clean up
-          rm mockoon-cli.tar.gz
+      - name: Verify Mockoon CLI installation
+        run: mockoon-cli --version
 
       - name: Start Mockoon Servers
         run: |
