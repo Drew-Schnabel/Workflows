@@ -165,7 +165,7 @@ jobs:
         run: |
           # Update the Mockoon CLI version to the latest stable release
           MOCKOON_VERSION="1.4.3"  # Replace with the latest stable version
-          MOCKOON_URL="https://github.com/mockoon/mockoon-cli/releases/download/v${MOCKOON_VERSION}/mockoon-cli-${MOCKOON_VERSION}-linux-x86_64.tar.gz"
+          MOCKOON_URL="https://github.com/mockoon/mockoon-cli/releases/download/v${{MOCKOON_VERSION}}/mockoon-cli-${MOCKOON_VERSION}-linux-x86_64.tar.gz"
 
           # Download the Mockoon CLI tar.gz file
           curl -f -sSL "$MOCKOON_URL" -o mockoon-cli.tar.gz
