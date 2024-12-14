@@ -6,7 +6,7 @@ on:
       - development  # Trigger on push to the development branch
 
 jobs:
-  Fetch-Resources:
+  Create-Resources:
     runs-on: ubuntu-latest
 
     steps:
@@ -45,9 +45,9 @@ jobs:
       - name: Log successful completion of resource fetching
         run: echo "Repositories successfully cloned and dependencies installed."
 
-  mssql:
+  Setup-Database:
     runs-on: ubuntu-latest
-    needs: Fetch-Resources  # Ensure resources are fetched first
+    needs: [ Create-Resources]  # Ensure resources are fetched first
 
     services:
       sqlserver:
@@ -89,7 +89,7 @@ jobs:
       - name: Execute SQL Scripts
         run: |
           # Navigate to the folder containing the SQL scripts
-          cd LIPAS-Client/.GitHub-CI/Database
+          cd Insurance-Business-Services/LIPAS-Client/.GitHub-CI/Database
 
           # Run all SQL scripts in the directory
           for sql_file in *.sql; do
@@ -103,7 +103,7 @@ jobs:
 
   mockoon:
     runs-on: ubuntu-latest
-    needs: [Fetch-Resources, mssql]  # Ensure resources and SQL are available first
+    needs: [Create-Resources, Setup-Database]  # Ensure resources and SQL are available first
 
     steps:
       - name: Checkout Repository
@@ -113,8 +113,20 @@ jobs:
         run: |
           curl -sSL https://github.com/mockoon/mockoon-cli/releases/download/v1.3.0/mockoon-cli-1.3.0-linux-x86_64.tar.gz | tar xz
           sudo mv mockoon-cli /usr/local/bin/mockoon-cli
-          mockoon-cli start --data /path/to/your/mockoon-data.json &
-
+      - name: Start Mockoon Servers
+        run: |
+          cd Insurance-Business-Services/LIPAS-Client
+          nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestClaimAPI.json --port 3000 > ./mockoon-3000.log 2>&1 &
+          nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestPartyAPI.json --port 3001 > ./mockoon-3001.log 2>&1 &
+          nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestPolicyAPI.json --port 3002 > ./mockoon-3002.log 2>&1 &
+          nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_LPRestProductAPI.json --port 3003 > ./mockoon-3003.log 2>&1 &
+          nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/V20.SP4/EXL_LifePRO_UserMgmtService.json --port 3004 > ./mockoon-3004.log 2>&1 &
+          nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/LDS/LDS_Workflow_CommonService.json --port 3005 > ./mockoon-3005.log 2>&1 &
+          nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/LDS/LDS_Workflow_UnderWritingService.json --port 3006 > ./mockoon-3006.log 2>&1 &
+          nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/LDS/LDS_Workflow_WorkflowService.json --port 3007 > ./mockoon-3007.log 2>&1 &
+          nohup mockoon-cli start --data ./.GitHub-CI/Mockoon/InsuranceServices/InsuranceServices.json --port 3008 > ./mockoon-3008.log 2>&1 &
+  
+    
       - name: Log Mockoon service is running
         run: |
           ps aux | grep mockoon
