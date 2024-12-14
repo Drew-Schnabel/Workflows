@@ -164,8 +164,8 @@ jobs:
       - name: Set up Mockoon CLI
         run: |
           # Update the Mockoon CLI URL to a valid release
-          # Verify the correct URL for v1.3.0 or use a newer version if available
-          MOCKOON_VERSION="1.3.0"
+          # Verify the correct URL for v1.4.1 or use a newer version if available
+          MOCKOON_VERSION="1.4.1"
           MOCKOON_URL="https://github.com/mockoon/mockoon-cli/releases/download/v${MOCKOON_VERSION}/mockoon-cli-${MOCKOON_VERSION}-linux-x86_64.tar.gz"
 
           # Download the Mockoon CLI tar.gz file
