@@ -163,22 +163,35 @@ jobs:
 
       - name: Set up Mockoon CLI
         run: |
-          # Update the Mockoon CLI URL to a valid release
-          # Verify the correct URL for v1.4.1 or use a newer version if available
-          MOCKOON_VERSION="1.4.1"
+          # Update the Mockoon CLI version to the latest stable release
+          MOCKOON_VERSION="1.4.3"  # Replace with the latest stable version
           MOCKOON_URL="https://github.com/mockoon/mockoon-cli/releases/download/v${MOCKOON_VERSION}/mockoon-cli-${MOCKOON_VERSION}-linux-x86_64.tar.gz"
 
           # Download the Mockoon CLI tar.gz file
           curl -f -sSL "$MOCKOON_URL" -o mockoon-cli.tar.gz
 
+          # Verify the file was downloaded correctly
+          if [[ ! -s mockoon-cli.tar.gz ]]; then
+            echo "Mockoon CLI download failed or file is empty."
+            exit 1
+          fi
+
           # Verify the file type
-          file mockoon-cli.tar.gz
+          FILE_TYPE=$(file mockoon-cli.tar.gz)
+          echo "Downloaded file type: $FILE_TYPE"
+          if [[ "$FILE_TYPE" != *"gzip compressed data"* ]]; then
+            echo "Downloaded file is not a valid gzip archive."
+            exit 1
+          fi
 
           # Extract the tar.gz file
           tar -xzvf mockoon-cli.tar.gz
 
           # Move the mockoon-cli binary to /usr/local/bin
           sudo mv mockoon-cli /usr/local/bin/mockoon-cli
+
+          # Verify Mockoon CLI installation
+          mockoon-cli --version
 
           # Clean up
           rm mockoon-cli.tar.gz
