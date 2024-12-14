@@ -1,13 +1,16 @@
 name: Insurance Business Services Build
 
 on:
-  push:
-    branches:
-      - development  # Trigger on push to main branch (you can change this as needed)
+  workflow_dispatch:  # Manually triggered, or you can adjust as needed
+    inputs:
+      branch:
+        description: 'Branch to pull (default is development)'
+        required: true
+        default: 'development'
 
 jobs:
   setup:
-    runs-on: ubuntu-latest  # Use Ubuntu for this action, adjust if you prefer another OS
+    runs-on: ubuntu-latest  # Use Ubuntu or Windows, depending on your preference
 
     steps:
       - name: Checkout code
@@ -16,31 +19,25 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20.x'  # Specify the node version if needed
+          node-version: '20.x'  # Specify Node.js version
 
-      - name: Create Insurance-Business-Services folder
+      - name: Create folder and navigate into it
         run: |
           mkdir -p Insurance-Business-Services
           cd Insurance-Business-Services
 
-      - name: Clone lipas-client repository
+      - name: Git Pull - lipas-client
         run: |
           cd Insurance-Business-Services
-          git clone --branch development https://github.com/VAINS-Dev/lipas-client.git
-
-      - name: Install dependencies for lipas-client
-        run: |
-          cd Insurance-Business-Services/lipas-client
+          git clone --branch ${{ github.event.inputs.branch }} https://github.com/VAINS-Dev/LIPAS-Client.git
+          cd lipas-client
           npm install
 
-      - name: Clone archer repository
+      - name: Git Pull - archer
         run: |
           cd Insurance-Business-Services
-          git clone --branch development https://github.com/VAINS-Dev/archer.git
-
-      - name: Install dependencies for archer
-        run: |
-          cd Insurance-Business-Services/archer
+          git clone --branch ${{ github.event.inputs.branch }} https://github.com/VAINS-Dev/A.R.C.H.E.R.git
+          cd archer
           npm install
 
       - name: Log successful completion
