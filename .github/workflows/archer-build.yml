@@ -6,8 +6,8 @@ on:
       - development  # Trigger on push to the development branch
 
 jobs:
-  # Job 1: Setup Environment
-  Setup-Environment:
+  # Job 1: Setup Environment and Resources
+  Setup-Environment-and-Resources:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,64 +28,11 @@ jobs:
       - name: Create Insurance-Business-Services folder
         run: mkdir -p Insurance-Business-Services
 
-      - name: Upload Insurance-Business-Services folder as Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: insurance-business-services
-          path: Insurance-Business-Services/
-
-      - name: List contents before uploading artifact (debug)
-        run: ls -al Insurance-Business-Services/
-
-  # Job 2: Pull LIPAS-Client
-  Pull-LIPAS-Client:
-    runs-on: ubuntu-latest
-    needs: Setup-Environment
-
-    steps:
-      - name: Download Insurance-Business-Services Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: insurance-business-services  # Must match the uploaded artifact name
-          path: Insurance-Business-Services/
-
-      - name: List contents of Insurance-Business-Services (debug)
-        run: ls -al Insurance-Business-Services/
-
       - name: Clone LIPAS-Client Repository
         run: |
           git clone --branch development https://github.com/VAINS-Dev/LIPAS-Client.git Insurance-Business-Services/LIPAS-Client
           cd Insurance-Business-Services/LIPAS-Client
           npm install
-
-      - name: Archive LIPAS-Client
-        run: |
-          tar -czf lipas-client.tar.gz -C Insurance-Business-Services LIPAS-Client
-          echo "LIPAS-Client archived successfully."
-
-      - name: Upload LIPAS-Client Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: lipas-client
-          path: lipas-client.tar.gz
-
-      - name: Remove temporary archive file
-        run: rm lipas-client.tar.gz
-
-  # Job 3: Pull A.R.C.H.E.R
-  Pull-ARCHER:
-    runs-on: ubuntu-latest
-    needs: Setup-Environment
-
-    steps:
-      - name: Download Insurance-Business-Services Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: insurance-business-services
-          path: Insurance-Business-Services/
-
-      - name: List contents of Insurance-Business-Services (debug)
-        run: ls -al Insurance-Business-Services/
 
       - name: Clone A.R.C.H.E.R Repository
         run: |
@@ -93,24 +40,27 @@ jobs:
           cd Insurance-Business-Services/A.R.C.H.E.R
           npm install
 
-      - name: Archive A.R.C.H.E.R
-        run: |
-          tar -czf archer.tar.gz -C Insurance-Business-Services A.R.C.H.E.R
-          echo "A.R.C.H.E.R archived successfully."
+      - name: Log successful completion of resource fetching
+        run: echo "Repositories successfully cloned and dependencies installed."
 
-      - name: Upload A.R.C.H.E.R Artifact
+      - name: Archive Insurance-Business-Services folder
+        run: |
+          tar -czf insurance-business-services.tar.gz Insurance-Business-Services/
+          echo "Folder archived successfully."
+
+      - name: Upload Resources as Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: archer
-          path: archer.tar.gz
+          name: insurance-business-services
+          path: insurance-business-services.tar.gz
 
       - name: Remove temporary archive file
-        run: rm archer.tar.gz
+        run: rm insurance-business-services.tar.gz
 
-  # Job 4: Setup Database
+  # Job 2: Setup Database
   Setup-Database:
     runs-on: ubuntu-latest
-    needs: [Pull-LIPAS-Client, Pull-ARCHER]
+    needs: Setup-Environment-and-Resources  # Ensure resources are fetched first
 
     services:
       sqlserver:
@@ -122,27 +72,23 @@ jobs:
           - 1433:1433
 
     steps:
-      - name: Download LIPAS-Client Artifact
+      - name: Download Resources Artifact
         uses: actions/download-artifact@v3
         with:
-          name: lipas-client
-          path: Insurance-Business-Services/LIPAS-Client/
+          name: insurance-business-services  # Must match the uploaded artifact name
+          path: .
 
-      - name: Download A.R.C.H.E.R Artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: archer
-          path: Insurance-Business-Services/A.R.C.H.E.R/
-
-      - name: Extract LIPAS-Client
+      - name: Extract Insurance-Business-Services
         run: |
-          tar -xzf Insurance-Business-Services/LIPAS-Client/lipas-client.tar.gz -C Insurance-Business-Services/LIPAS-Client/
-          echo "LIPAS-Client extracted successfully."
+          tar -xzf insurance-business-services.tar.gz
+          echo "Insurance-Business-Services extracted successfully."
 
-      - name: Extract A.R.C.H.E.R
+      - name: List directories for debugging
         run: |
-          tar -xzf Insurance-Business-Services/A.R.C.H.E.R/archer.tar.gz -C Insurance-Business-Services/A.R.C.H.E.R/
-          echo "A.R.C.H.E.R extracted successfully."
+          echo "Listing Insurance-Business-Services:"
+          ls -la Insurance-Business-Services/
+          echo "Listing LIPAS-Client/.GitHub-CI/Database:"
+          ls -la Insurance-Business-Services/LIPAS-Client/.GitHub-CI/Database/
 
       - name: Install SQLCMD Tools
         run: |
@@ -188,10 +134,10 @@ jobs:
             fi
           done
 
-  # Job 5: Mockoon Setup
+  # Job 3: Mockoon Setup
   mockoon:
     runs-on: ubuntu-latest
-    needs: [Pull-LIPAS-Client, Pull-ARCHER, Setup-Database]
+    needs: Setup-Database  # Ensure Setup-Database job is completed
 
     steps:
       - name: Download Resources Artifact
@@ -202,7 +148,7 @@ jobs:
 
       - name: Extract Insurance-Business-Services
         run: |
-          tar -xzf insurance-business-services.tar.gz -C .
+          tar -xzf insurance-business-services.tar.gz
           echo "Insurance-Business-Services extracted successfully."
 
       - name: List directories for debugging
@@ -251,7 +197,7 @@ jobs:
         run: |
           ps aux | grep mockoon
 
-  # Job 6: Build and Deploy
+  # Job 4: Build and Deploy
   Build-And-Deploy:
     runs-on: ubuntu-latest
     needs: mockoon  # Ensure that repositories are cloned and services are set up first
@@ -265,7 +211,7 @@ jobs:
 
       - name: Extract Insurance-Business-Services
         run: |
-          tar -xzf insurance-business-services.tar.gz -C .
+          tar -xzf insurance-business-services.tar.gz
           echo "Insurance-Business-Services extracted successfully."
 
       - name: Set up Node.js
