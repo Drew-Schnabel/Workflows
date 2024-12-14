@@ -37,7 +37,7 @@ jobs:
       - name: Download Setup-Environment
         uses: actions/download-artifact@v3
         with:
-          name: insurance-business-services
+          name: Insurance-Business-Services
           path: Insurance-Business-Services/
 
       - name: Clone LIPAS-Client Repository
@@ -61,7 +61,7 @@ jobs:
       - name: Download Setup-Environment
         uses: actions/download-artifact@v3
         with:
-          name: insurance-business-services
+          name: Insurance-Business-Services
           path: Insurance-Business-Services/
 
       - name: Clone A.R.C.H.E.R Repository
