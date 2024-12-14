@@ -57,6 +57,9 @@ jobs:
       - name: Remove temporary archive file
         run: rm insurance-business-services.tar.gz
 
+      - name: List contents before uploading artifact (debug)
+        run: ls -al Insurance-Business-Services/
+
   # Job 2: Setup Database
   Setup-Database:
     runs-on: ubuntu-latest
@@ -160,8 +163,25 @@ jobs:
 
       - name: Set up Mockoon CLI
         run: |
-          curl -sSL https://github.com/mockoon/mockoon-cli/releases/download/v1.3.0/mockoon-cli-1.3.0-linux-x86_64.tar.gz | tar xz
+          # Update the Mockoon CLI URL to a valid release
+          # Verify the correct URL for v1.3.0 or use a newer version if available
+          MOCKOON_VERSION="1.3.0"
+          MOCKOON_URL="https://github.com/mockoon/mockoon-cli/releases/download/v${MOCKOON_VERSION}/mockoon-cli-${MOCKOON_VERSION}-linux-x86_64.tar.gz"
+
+          # Download the Mockoon CLI tar.gz file
+          curl -f -sSL "$MOCKOON_URL" -o mockoon-cli.tar.gz
+
+          # Verify the file type
+          file mockoon-cli.tar.gz
+
+          # Extract the tar.gz file
+          tar -xzvf mockoon-cli.tar.gz
+
+          # Move the mockoon-cli binary to /usr/local/bin
           sudo mv mockoon-cli /usr/local/bin/mockoon-cli
+
+          # Clean up
+          rm mockoon-cli.tar.gz
 
       - name: Start Mockoon Servers
         run: |
@@ -180,7 +200,7 @@ jobs:
         run: |
           for port in 3000 3001 3002 3003 3004 3005 3006 3007 3008; do
             for i in {1..10}; do
-              if curl --silent http://localhost:$port; then
+              if curl --silent http://localhost:$port > /dev/null; then
                 echo "Mockoon server on port $port is ready"
                 break
               fi
