@@ -1,0 +1,47 @@
+name: Insurance Business Services Build
+
+on:
+  push:
+    branches:
+      - development  # Trigger on push to main branch (you can change this as needed)
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest  # Use Ubuntu for this action, adjust if you prefer another OS
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'  # Specify the node version if needed
+
+      - name: Create Insurance-Business-Services folder
+        run: |
+          mkdir -p Insurance-Business-Services
+          cd Insurance-Business-Services
+
+      - name: Clone lipas-client repository
+        run: |
+          cd Insurance-Business-Services
+          git clone --branch development https://github.com/VAINS-Dev/lipas-client.git
+
+      - name: Install dependencies for lipas-client
+        run: |
+          cd Insurance-Business-Services/lipas-client
+          npm install
+
+      - name: Clone archer repository
+        run: |
+          cd Insurance-Business-Services
+          git clone --branch development https://github.com/VAINS-Dev/archer.git
+
+      - name: Install dependencies for archer
+        run: |
+          cd Insurance-Business-Services/archer
+          npm install
+
+      - name: Log successful completion
+        run: echo "Repositories successfully cloned and dependencies installed."
